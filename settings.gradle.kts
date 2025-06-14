@@ -29,6 +29,3 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":data-core")
-include(":domain-radarr")
-include(":feature-radarr")

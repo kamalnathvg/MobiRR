@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -37,6 +38,8 @@ kotlin {
             //koin
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -48,16 +51,33 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
+            implementation(libs.material.icons.extended)
+
             //koin
             api(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.compose)
 
-            implementation(projects.dataCore)
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.bundles.ktor)
+
+            implementation(libs.bundles.coil)
+
+            implementation(libs.kotlinx.serialization.json)
+
+            implementation(libs.kermit)
+
+            implementation(libs.navigation.compose)
 
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+
+        iosMain.dependencies {
+
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
