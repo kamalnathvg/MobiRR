@@ -32,10 +32,12 @@ private const val TAG = "MovieGridItem"
 
 @Composable
 internal fun MovieGridItem(
-    onMovieClick: (Movie) -> Unit, movie: Movie
+    onMovieClick: (Movie) -> Unit,
+    movie: Movie,
+    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
             .height(IntrinsicSize.Max),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

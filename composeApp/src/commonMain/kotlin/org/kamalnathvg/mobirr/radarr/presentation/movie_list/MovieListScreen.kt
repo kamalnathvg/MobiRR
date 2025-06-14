@@ -1,5 +1,6 @@
 package org.kamalnathvg.mobirr.radarr.presentation.movie_list
 
+import MovieSearchBar
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -49,10 +51,18 @@ internal fun MovieListScreen(
     state: MovieListScreenState, onAction: (MovieListAction) -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
+    val focusManager = LocalFocusManager.current
+
+    fun clearFocusAndHideKeyboard() {
+        keyboardController?.hide()
+        focusManager.clearFocus()
+    }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.surface)
             .statusBarsPadding()
     ) {
         Logger.d(SCREEN_TAG) { "Movies Count: ${state.filteredMovies?.size}" }
@@ -62,14 +72,16 @@ internal fun MovieListScreen(
                 onAction(MovieListAction.OnSearchQueryChange(query))
             },
             onImeSearch = {
-                keyboardController?.hide()
+                clearFocusAndHideKeyboard()
             },
+            onFocusChanged = {
+                clearFocusAndHideKeyboard()
+            }
         )
 
         Box(
             modifier = Modifier.fillMaxHeight()
         ) {
-
             when (val result = state.filteredMovies) {
                 null -> CircularProgressIndicator()
                 else -> {
@@ -83,9 +95,11 @@ internal fun MovieListScreen(
                             items(
                                 items = result, key = { it.id }) { movie ->
                                 MovieGridItem(
-                                    movie = movie, onMovieClick = {
+                                    movie = movie,
+                                    onMovieClick = {
                                         onAction(MovieListAction.OnMovieClick(movie))
-                                    })
+                                    },
+                                )
                             }
                         }
                     } else {
@@ -94,7 +108,6 @@ internal fun MovieListScreen(
                 }
             }
         }
-
     }
 }
 
