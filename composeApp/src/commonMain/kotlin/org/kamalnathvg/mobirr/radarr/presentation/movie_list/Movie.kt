@@ -113,3 +113,12 @@ internal suspend fun getDummyMovies(count: Int = 10): List<Movie>{
     val dummyRepo = DummyRepo.DynamicString("")
     return dummyRepo.asMovies().map { it.toMovie() }
 }
+
+internal suspend fun getDummyMovieById(movieId: Int): Result<Movie>{
+    val movies = getDummyMovies()
+    val movie = movies.firstOrNull { it.tmdbId == movieId }
+    if(movie == null){
+        return Result.failure(Exception("Movie Not Found"))
+    }
+    return Result.success(movie)
+}
