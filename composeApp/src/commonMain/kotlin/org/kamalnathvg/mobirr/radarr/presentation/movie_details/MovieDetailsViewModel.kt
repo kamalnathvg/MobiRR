@@ -11,7 +11,7 @@ import org.kamalnathvg.mobirr.radarr.presentation.movie_list.getDummyMovieById
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.getDummyMovies
 
 internal data class MovieDetailsScreenState(
-    val movie: Movie? = null,
+    val movieDetailsForView: MovieDetailsForView? = null,
     val errorMessage: String? = null,
 )
 
@@ -36,7 +36,7 @@ internal class MovieDetailsViewModel(): ViewModel() {
                         .onSuccess { movie ->
                             _state.update {
                                 it.copy(
-                                    movie = movie
+                                    movieDetailsForView = movie
                                 )
                             }
                         }

@@ -8,11 +8,16 @@ import org.kamalnathvg.mobirr.radarr.data.MovieDto
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView
+import org.kamalnathvg.mobirr.radarr.presentation.movie_details.toMovieDetailsForView
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.seconds
 
 internal data class Movie(
     val id: String,
     val title: String,
     val year: Int,
+    val duration: String,
     val studio: String,
     val hasFile: Boolean,
     val isAvailable: Boolean,
@@ -37,6 +42,21 @@ internal data class Movie(
                 remoteUrl = dtoImage.remoteUrl
             )
         }
+    }
+    fun getMovieBackDropOrDefault(): Image?{
+        return this.getImage(CoverType.BACKDROP) ?:
+         this.getImage(CoverType.FAN_ART) ?:
+         this.getImage(CoverType.POSTER)
+    }
+
+    fun getMoviePosterOrDefault(): Image?{
+        return this.getImage(CoverType.POSTER) ?:
+        this.getImage(CoverType.FAN_ART) ?:
+        this.getImage(CoverType.BACKDROP)
+    }
+
+    private fun getImage(coverType: CoverType): Image?{
+        return this.images.firstOrNull{it.coverType == coverType}
     }
 }
 
@@ -96,9 +116,18 @@ internal fun MovieDto.toMovie(): Movie{
         },
         genres = genres.map { dtoGenre ->
             dtoGenre.toGenre()
-        }
+        },
+        duration = this.runtime.toRuntimeString()
     )
 }
+
+
+internal fun Long.toRuntimeString(): String{
+    val duration = this.seconds
+    return "${duration.inWholeHours}h ${duration.inWholeMinutes}"
+}
+
+
 
 internal fun String.parseUTCtoLocalDateTime(): LocalDateTime{
 
@@ -114,11 +143,12 @@ internal suspend fun getDummyMovies(count: Int = 10): List<Movie>{
     return dummyRepo.asMovies().map { it.toMovie() }
 }
 
-internal suspend fun getDummyMovieById(movieId: Int): Result<Movie>{
-    val movies = getDummyMovies()
+internal suspend fun getDummyMovieById(movieId: Int): Result<MovieDetailsForView>{
+    val dummyRepo = DummyRepo.DynamicString("")
+    val movies = dummyRepo.asMovies()
     val movie = movies.firstOrNull { it.tmdbId == movieId }
     if(movie == null){
         return Result.failure(Exception("Movie Not Found"))
     }
-    return Result.success(movie)
+    return Result.success(movie.toMovieDetailsForView())
 }

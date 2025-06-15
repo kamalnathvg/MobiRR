@@ -25,7 +25,7 @@ fun NavGraphBuilder.radarrGraph(
         composable<RadarrGraph.MovieDetails> { backStackEntry ->
             val movieDetails = backStackEntry.toRoute<RadarrGraph.MovieDetails>()
             MovieDetailsRoot(
-                onBackClick = {navController.navigateUp()},
+                onNavigateBack = {navController.navigateUp()},
                 movieId = movieDetails.movieId
             )
         }
