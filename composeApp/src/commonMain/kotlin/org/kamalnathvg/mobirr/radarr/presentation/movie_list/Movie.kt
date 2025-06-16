@@ -1,17 +1,22 @@
 package org.kamalnathvg.mobirr.radarr.presentation.movie_list
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.format.DateTimeComponents
 import org.kamalnathvg.mobirr.radarr.data.DummyRepo
 import org.kamalnathvg.mobirr.radarr.data.MovieDto
 import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format
+import kotlinx.datetime.format.MonthNames
+import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.toMovieDetailsForView
-import kotlin.time.Duration
-import kotlin.time.Duration.Companion.seconds
+import kotlin.math.pow
+import kotlin.math.round
+import kotlin.time.DurationUnit
+import kotlin.time.toDuration
 
 internal data class Movie(
     val id: String,
@@ -59,8 +64,6 @@ internal data class Movie(
         return this.images.firstOrNull{it.coverType == coverType}
     }
 }
-
-
 
 internal enum class CoverType{
     POSTER,
@@ -121,13 +124,20 @@ internal fun MovieDto.toMovie(): Movie{
     )
 }
 
-
 internal fun Long.toRuntimeString(): String{
-    val duration = this.seconds
-    return "${duration.inWholeHours}h ${duration.inWholeMinutes}"
+    val duration = this.toDuration(DurationUnit.MINUTES)
+    val hours = duration.inWholeHours
+    val minutes = duration.minus(hours.toDuration(DurationUnit.HOURS)).inWholeMinutes
+    return if (hours > 0){
+        "${hours}h ${minutes}m"
+    }else{
+        "${minutes}m"
+    }
 }
 
-
+internal fun Long.toGB(): String{
+    return "${round(this * 10 / (1024.0.pow(3) * 10))}GB"
+}
 
 internal fun String.parseUTCtoLocalDateTime(): LocalDateTime{
 
@@ -136,19 +146,27 @@ internal fun String.parseUTCtoLocalDateTime(): LocalDateTime{
 }
 
 
-
+internal fun String.toDateTimeString(): String{
+    val customFormat = LocalDate.Format {
+        monthName(MonthNames.ENGLISH_ABBREVIATED); char(' '); dayOfMonth(); chars(", "); year()
+    }
+    return this.parseUTCtoLocalDateTime()
+        .date
+        .format(customFormat)
+}
 
 internal suspend fun getDummyMovies(count: Int = 10): List<Movie>{
     val dummyRepo = DummyRepo.DynamicString("")
-    return dummyRepo.asMovies().map { it.toMovie() }
+    return dummyRepo.getMovies().map { it.toMovie() }
 }
 
 internal suspend fun getDummyMovieById(movieId: Int): Result<MovieDetailsForView>{
     val dummyRepo = DummyRepo.DynamicString("")
-    val movies = dummyRepo.asMovies()
+    val movies = dummyRepo.getMovies()
     val movie = movies.firstOrNull { it.tmdbId == movieId }
     if(movie == null){
         return Result.failure(Exception("Movie Not Found"))
     }
-    return Result.success(movie.toMovieDetailsForView())
+    val credits = dummyRepo.getDummyMetadata()
+    return Result.success(movie.toMovieDetailsForView(credits))
 }

@@ -3,9 +3,9 @@ package org.kamalnathvg.mobirr.radarr.presentation.movie_details
 import org.kamalnathvg.mobirr.radarr.data.MovieDto
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView.FileInfo
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.CoverType
-import org.kamalnathvg.mobirr.radarr.presentation.movie_list.Movie
-import org.kamalnathvg.mobirr.radarr.presentation.movie_list.Movie.Image
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toCoverType
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toDateTimeString
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toGB
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toRuntimeString
 import kotlin.math.round
 
@@ -14,8 +14,8 @@ internal data class MovieDetailsForView(
     val imdbId: String,
     val tmdbId: Int,
     val movieInfo: MovieInfo,
-    val filesInfo: List<FileInfo>
-
+    val filesInfo: List<FileInfo>,
+    val credits: List<CreditResource>
 ){
     data class MovieInfo(
         val images: List<Image>,
@@ -46,6 +46,7 @@ internal data class MovieDetailsForView(
         }
     }
     data class FileInfo(
+        val relativePath: String,
         val path: String,
         val sizeOnDisk: String,
         val dateAdded: String,
@@ -87,7 +88,9 @@ internal data class MovieDetailsForView(
 
 
 
-internal fun MovieDto.toMovieDetailsForView(): MovieDetailsForView{
+internal fun MovieDto.toMovieDetailsForView(
+    credits: List<CreditResource>
+): MovieDetailsForView{
     return MovieDetailsForView(
         id = this.id,
         imdbId = this.imdbId,
@@ -106,12 +109,18 @@ internal fun MovieDto.toMovieDetailsForView(): MovieDetailsForView{
             description =  this.overview,
         ),
         filesInfo = listOf(FileInfo(
+            relativePath = this.movieFile.relativePath,
             path = this.movieFile.path,
-            sizeOnDisk = this.movieFile.size.toString(),
-            dateAdded = this.movieFile.dateAdded,
+            sizeOnDisk = this.movieFile.size.toGB(),
+            dateAdded = this.movieFile.dateAdded.toDateTimeString(),
             languages = listOf(this.movieFile.languages.first().name),
             quality = this.movieFile.quality.quality.name,
-            resolution = this.movieFile.quality.quality.resolution.toString()
-        )
-    ))
+            resolution = this.movieFile.quality.quality.resolution.toString(),
+        ),
+    ),
+        credits = credits
+    )
 }
+
+
+
