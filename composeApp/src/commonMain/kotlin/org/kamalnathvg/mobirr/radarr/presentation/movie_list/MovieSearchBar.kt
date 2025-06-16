@@ -65,7 +65,12 @@ internal fun MovieSearchBar(
         maxLines = 1,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(6.dp)
+            .padding(
+                top = 6.dp,
+                bottom = 12.dp,
+                start = 6.dp,
+                end = 6.dp
+            )
             .clip(RoundedCornerShape(100.dp))
             .background(MaterialTheme.colorScheme.surfaceVariant)
             .minimumInteractiveComponentSize()

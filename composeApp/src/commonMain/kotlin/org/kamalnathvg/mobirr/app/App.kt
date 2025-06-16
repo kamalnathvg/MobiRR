@@ -6,12 +6,13 @@ import androidx.navigation.compose.rememberNavController
 import co.touchlab.kermit.Logger
 import org.koin.compose.KoinContext
 import androidx.navigation.compose.NavHost
+import com.example.compose.MobiRRTheme
 import org.kamalnathvg.mobirr.radarr.navigation.RadarrGraph
 import org.kamalnathvg.mobirr.radarr.navigation.radarrGraph
 
 @Composable
 fun App() {
-    MaterialTheme {
+    MobiRRTheme {
         KoinContext {
             val navController = rememberNavController()
             navController.addOnDestinationChangedListener { _,destination, _ ->

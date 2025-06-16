@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -57,53 +58,55 @@ internal fun MovieListScreen(
         keyboardController?.hide()
         focusManager.clearFocus()
     }
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.surface)
-            .statusBarsPadding()
+    Surface(
     ) {
-        Logger.d(SCREEN_TAG) { "Movies Count: ${state.filteredMovies?.size}" }
-        MovieSearchBar(
-            searchQuery = state.searchQuery,
-            onSearchQueryChange = { query ->
-                onAction(MovieListAction.OnSearchQueryChange(query))
-            },
-            onImeSearch = {
-                clearFocusAndHideKeyboard()
-            },
-            onFocusChanged = {
-                clearFocusAndHideKeyboard()
-            }
-        )
-
-        Box(
-            modifier = Modifier.fillMaxHeight()
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxSize()
+                .statusBarsPadding()
         ) {
-            when (val result = state.filteredMovies) {
-                null -> CircularProgressIndicator()
-                else -> {
-                    if (result.isNotEmpty()) {
-                        Logger.d(SCREEN_TAG) { "RE-RENDERING LAZY VERTICAL GRID" }
-                        LazyVerticalGrid(
-                            columns = GridCells.Adaptive(minSize = 128.dp),
-                            verticalArrangement = Arrangement.spacedBy(12.dp),
-                            horizontalArrangement = Arrangement.SpaceEvenly,
-                        ) {
-                            items(
-                                items = result, key = { it.id }) { movie ->
-                                MovieGridItem(
-                                    movie = movie,
-                                    onMovieClick = {
-                                        onAction(MovieListAction.OnMovieClick(movie))
-                                    },
-                                )
+            Logger.d(SCREEN_TAG) { "Movies Count: ${state.filteredMovies?.size}" }
+            MovieSearchBar(
+                searchQuery = state.searchQuery,
+                onSearchQueryChange = { query ->
+                    onAction(MovieListAction.OnSearchQueryChange(query))
+                },
+                onImeSearch = {
+                    clearFocusAndHideKeyboard()
+                },
+                onFocusChanged = {
+                    clearFocusAndHideKeyboard()
+                }
+            )
+
+            Box(
+                modifier = Modifier.fillMaxHeight()
+            ) {
+                when (val result = state.filteredMovies) {
+                    null -> CircularProgressIndicator()
+                    else -> {
+                        if (result.isNotEmpty()) {
+                            Logger.d(SCREEN_TAG) { "RE-RENDERING LAZY VERTICAL GRID" }
+                            LazyVerticalGrid(
+                                columns = GridCells.Adaptive(minSize = 128.dp),
+                                verticalArrangement = Arrangement.spacedBy(12.dp),
+                                horizontalArrangement = Arrangement.SpaceEvenly,
+                            ) {
+                                items(
+                                    items = result, key = { it.id }) { movie ->
+                                    MovieGridItem(
+                                        movie = movie,
+                                        onMovieClick = {
+                                            onAction(MovieListAction.OnMovieClick(movie))
+                                        },
+                                    )
+                                }
                             }
+                        } else {
+                            Text("No Movies Found")
                         }
-                    } else {
-                        Text("No Movies Found")
                     }
                 }
             }

@@ -136,7 +136,7 @@ internal fun Long.toRuntimeString(): String{
 }
 
 internal fun Long.toGB(): String{
-    return "${round(this * 10 / (1024.0.pow(3) * 10))}GB"
+    return "${round(this * 10 / (1024.0.pow(3) )) / 10} GB"
 }
 
 internal fun String.parseUTCtoLocalDateTime(): LocalDateTime{

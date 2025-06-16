@@ -31,6 +31,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -70,13 +71,13 @@ internal fun MovieDetailsRoot(
     LaunchedEffect(movieId) {
         viewModel.onAction(MovieDetailsAction.GetMovieDetails(movieId))
     }
-    MovieDetailsScreen(
-        state = state,
-        onAction = { action ->
-            viewModel.onAction(action)
-        },
-        onNavigateBack = onNavigateBack,
-    )
+        MovieDetailsScreen(
+            state = state,
+            onAction = { action ->
+                viewModel.onAction(action)
+            },
+            onNavigateBack = onNavigateBack,
+        )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -110,37 +111,39 @@ internal fun MovieDetailsScreen(
             }
         }
     }
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 12.dp)
-            .verticalScroll(rememberScrollState())
-            .statusBarsPadding(),
-        horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.Top,
-    ) {
-        when (val movieDetails = state.movieDetailsForView) {
-            null -> CircularProgressIndicator()
-            else -> {
-                MovieInfoSection(
-                    movieInfo = movieDetails.movieInfo,
-                    onNavigateBack = onNavigateBack,
-                    onSearchClick = {
-                        showBottomSheet = true
-                        onAction(MovieDetailsAction.GetSearchResults(movieDetails.id))
-                    }
-                )
-                movieDetails.filesInfo.forEach { fileInfo ->
-                    FilesInfoSection(
-                        filesInfo = fileInfo,
-                        onDeleteButtonClick = { fileId ->
-                            onAction(MovieDetailsAction.DeleteMovieFile(fileId))
+    Surface{
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 12.dp)
+                .verticalScroll(rememberScrollState())
+                .statusBarsPadding(),
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.Top,
+        ) {
+            when (val movieDetails = state.movieDetailsForView) {
+                null -> CircularProgressIndicator()
+                else -> {
+                    MovieInfoSection(
+                        movieInfo = movieDetails.movieInfo,
+                        onNavigateBack = onNavigateBack,
+                        onSearchClick = {
+                            showBottomSheet = true
+                            onAction(MovieDetailsAction.GetSearchResults(movieDetails.id))
                         }
                     )
+                    movieDetails.filesInfo.forEach { fileInfo ->
+                        FilesInfoSection(
+                            filesInfo = fileInfo,
+                            onDeleteButtonClick = { fileId ->
+                                onAction(MovieDetailsAction.DeleteMovieFile(fileId))
+                            }
+                        )
+                    }
+                    CreditInfoSection(
+                        credits = movieDetails.credits,
+                    )
                 }
-                CreditInfoSection(
-                    credits = movieDetails.credits,
-                )
             }
         }
     }
