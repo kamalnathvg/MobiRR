@@ -183,20 +183,20 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
 
             FilterType.MISSING -> {
                 this.filter {
-                    !it.isAvailable
+                    !it.hasFile
                 }
             }
 
             FilterType.WANTED -> {
                 this.filter {
-                    !it.isAvailable && it.isMonitored
+                    !it.hasFile && it.isMonitored
                 }
             }
 
             FilterType.CUTOFF_MET -> {
-                cachedMovies?.filter {
-                    it.hasFile && (it.isCutOffMet)
-                } ?: emptyList<Movie>()
+                this.filter {
+                    it.isCutOffMet
+                }
             }
         }
     }
