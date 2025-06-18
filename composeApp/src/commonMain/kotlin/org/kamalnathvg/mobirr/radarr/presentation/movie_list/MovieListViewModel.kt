@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-
+import org.koin.core.component.KoinComponent
 
 
 private const val TAG = "MovieListScreenViewModel"
@@ -18,10 +18,33 @@ internal data class MovieListScreenState(
     val filteredMovies: List<Movie>? = null,
     val errorMessage: String? = null,
     val searchQuery: String = "",
+    val currentFilterType: FilterType = FilterType.ALL,
+    val currentSortOrder: SortOrder = SortOrder.DESCENDING,
+    val currentSortValue: SortValue = SortValue.TITLE,
+    val currentView: MovieListScreenView = MovieListScreenView.LIST
 )
 
 
-internal class MovieListViewModel(): ViewModel(){
+internal enum class SortValue(val label: String) {
+    ADDED("Added"), SIZE_ON_DISK("Size On Disk"), TITLE("Title"), RELEASE_DATE("Release Date"),
+}
+
+internal enum class SortOrder {
+    ASCENDING, DESCENDING
+}
+
+internal enum class FilterType(val label: String) {
+    ALL("All"), UNMONITORED("Unmonitored"), MONITORED("Monitored"), MISSING("Missing"), WANTED("Wanted"), CUTOFF_MET(
+        "Cut-Off Met"
+    )
+}
+
+
+enum class MovieListScreenView {
+    LIST, GRID
+}
+
+internal class MovieListViewModel : ViewModel(), KoinComponent {
     private var cachedMovies: List<Movie>? = null
 
     private val _state = MutableStateFlow(MovieListScreenState())
@@ -33,7 +56,7 @@ internal class MovieListViewModel(): ViewModel(){
         }
     }
 
-    private suspend fun fetchMovies(){
+    private suspend fun fetchMovies() {
         Logger.d("Trying to fetch movies", tag = TAG)
 
         cachedMovies = getDummyMovies()
@@ -45,16 +68,17 @@ internal class MovieListViewModel(): ViewModel(){
         Logger.d(TAG) { "Movies after updating ${state.value.filteredMovies?.size}" }
     }
 
-    fun onAction(action: MovieListAction){
-        Logger.d(TAG){action::class.qualifiedName.toString()}
-        when(action){
+    fun onAction(action: MovieListAction) {
+        Logger.d(TAG) { action::class.qualifiedName.toString() }
+        when (action) {
             is MovieListAction.OnMovieClick -> {
 
             }
 
             is MovieListAction.OnSearchQueryChange -> {
                 val filteredMovies = cachedMovies?.filter {
-                    it.title.toLowerCase(Locale.current).contains(action.query.toLowerCase(Locale.current))
+                    it.title.toLowerCase(Locale.current)
+                        .contains(action.query.toLowerCase(Locale.current))
                 }
                 _state.update {
                     it.copy(
@@ -62,6 +86,117 @@ internal class MovieListViewModel(): ViewModel(){
                         filteredMovies = filteredMovies
                     )
                 }
+            }
+
+            is MovieListAction.OnFilterChange -> {
+                handleFilterChange(filterType = action.filterType)
+            }
+
+            is MovieListAction.OnSortOrderChanged -> {
+                val filteredMovies = state.value.filteredMovies?.handleSortOrderChanged(
+                    sortOrder = action.sortOrder,
+                    sortValue = state.value.currentSortValue
+                ) ?: emptyList<Movie>()
+                _state.update {
+                    it.copy(
+                        currentSortOrder = action.sortOrder,
+                        filteredMovies = filteredMovies
+                    )
+                }
+            }
+
+            is MovieListAction.OnSortValueChanged -> {
+                val filteredMovies = state.value.filteredMovies?.handleSortOrderChanged(
+                    sortOrder = state.value.currentSortOrder,
+                    sortValue = action.sortValue
+                ) ?: emptyList<Movie>()
+                _state.update {
+                    it.copy(
+                        currentSortValue = action.sortValue,
+                        filteredMovies = filteredMovies
+                    )
+                }
+            }
+
+            is MovieListAction.OnListViewChange -> {
+                _state.update {
+                    it.copy(
+                        currentView = action.movieListScreenView
+                    )
+                }
+            }
+        }
+    }
+
+    private fun List<Movie>.handleSortOrderChanged(
+        sortOrder: SortOrder,
+        sortValue: SortValue
+    ): List<Movie> {
+        return when (sortValue) {
+            SortValue.ADDED -> {
+                this.sortByOrder(sortOrder) { it.added }
+            }
+
+            SortValue.SIZE_ON_DISK -> this.sortByOrder(sortOrder) { it.sizeOnDisk }
+            SortValue.TITLE -> this.sortByOrder(sortOrder) { it.title }
+            SortValue.RELEASE_DATE -> this.sortByOrder(sortOrder) { it.year }
+        }
+    }
+
+    private fun <T, R : Comparable<R>> List<T>.sortByOrder(
+        sortOrder: SortOrder,
+        selector: (T) -> R?
+    ) = when (sortOrder) {
+        SortOrder.ASCENDING -> this.sortedBy(selector)
+        SortOrder.DESCENDING -> this.sortedByDescending(selector)
+    }
+
+    private fun handleFilterChange(filterType: FilterType) {
+        viewModelScope.launch {
+            val filteredMovies = cachedMovies?.getFilteredMovie(filterType)
+            _state.update {
+                it.copy(
+                    filteredMovies = filteredMovies,
+                    currentFilterType = filterType
+                )
+            }
+        }
+    }
+
+    private fun List<Movie>.getFilteredMovie(filterType: FilterType): List<Movie> {
+        return when (filterType) {
+            FilterType.ALL -> {
+                this
+            }
+
+            FilterType.UNMONITORED -> {
+                this.filter {
+                    !it.isMonitored
+                }
+            }
+
+            FilterType.MONITORED -> {
+                this.filter {
+                    it.isMonitored
+                }
+            }
+
+            FilterType.MISSING -> {
+                this.filter {
+                    !it.isAvailable
+                }
+            }
+
+            FilterType.WANTED -> {
+                this.filter {
+                    !it.isAvailable && it.isMonitored
+                }
+            }
+
+            FilterType.CUTOFF_MET -> {
+                cachedMovies?.filter {
+                    it.hasFile && (it.isCutOffMet)
+                } ?: emptyList<Movie>()
             }
         }
     }

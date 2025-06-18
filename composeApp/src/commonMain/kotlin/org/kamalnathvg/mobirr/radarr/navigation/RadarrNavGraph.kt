@@ -1,5 +1,6 @@
 package org.kamalnathvg.mobirr.radarr.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -10,7 +11,8 @@ import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsRoot
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.MovieListRoot
 
 fun NavGraphBuilder.radarrGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    bottomNavBar: @Composable () -> Unit,
 ){
     navigation<RadarrGraph>(
         startDestination = RadarrGraph.MovieList
@@ -19,7 +21,8 @@ fun NavGraphBuilder.radarrGraph(
             MovieListRoot(
                 onMovieClick = { movie ->
                     navController.navigate(RadarrGraph.MovieDetails(movie.tmdbId))
-                }
+                },
+                bottomNavBar = bottomNavBar
             )
         }
         composable<RadarrGraph.MovieDetails> { backStackEntry ->

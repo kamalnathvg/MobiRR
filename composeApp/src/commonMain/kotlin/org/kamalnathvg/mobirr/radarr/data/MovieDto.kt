@@ -37,7 +37,7 @@ internal data class MovieDto(
     @SerialName("monitored")
     val monitored: Boolean = false,
     @SerialName("movieFile")
-    val movieFile: MovieFile = MovieFile(), // TODO: Check if Movie File can be a list
+    val movieFile: MovieFile? = null, // TODO: Check if Movie File can be a list
     @SerialName("movieFileId")
     val movieFileId: Int = 0,
     @SerialName("originalLanguage")

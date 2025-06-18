@@ -1,12 +1,15 @@
 package org.kamalnathvg.mobirr.app
 
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 import co.touchlab.kermit.Logger
 import org.koin.compose.KoinContext
 import androidx.navigation.compose.NavHost
 import com.example.compose.MobiRRTheme
+import org.kamalnathvg.mobirr.app.navigation.AppBottomNavBar
 import org.kamalnathvg.mobirr.radarr.navigation.RadarrGraph
 import org.kamalnathvg.mobirr.radarr.navigation.radarrGraph
 
@@ -22,7 +25,7 @@ fun App() {
                 navController = navController,
                 startDestination = RadarrGraph
             ) {
-                radarrGraph(navController)
+                radarrGraph(navController){AppBottomNavBar(navController)}
             }
         }
     }

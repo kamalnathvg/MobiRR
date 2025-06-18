@@ -68,8 +68,6 @@ internal fun MovieSearchBar(
             .padding(
                 top = 6.dp,
                 bottom = 12.dp,
-                start = 6.dp,
-                end = 6.dp
             )
             .clip(RoundedCornerShape(100.dp))
             .background(MaterialTheme.colorScheme.surfaceVariant)

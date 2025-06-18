@@ -47,6 +47,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import co.touchlab.kermit.Logger
@@ -60,6 +61,7 @@ import mobirr.composeapp.generated.resources.tmdb
 import org.jetbrains.compose.resources.painterResource
 import org.kamalnathvg.mobirr.getScreenWidth
 import org.koin.compose.viewmodel.koinViewModel
+import kotlin.math.round
 
 private const val TAG = "MovieDetailsScreen"
 
@@ -132,7 +134,7 @@ internal fun MovieDetailsScreen(
                             onAction(MovieDetailsAction.GetSearchResults(movieDetails.id))
                         }
                     )
-                    movieDetails.filesInfo.forEach { fileInfo ->
+                    movieDetails.filesInfo?.let { fileInfo ->
                         FilesInfoSection(
                             filesInfo = fileInfo,
                             onDeleteButtonClick = { fileId ->
@@ -159,6 +161,7 @@ internal fun MovieInfoSection(
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .height(250.dp)
             .padding(bottom = 4.dp), verticalArrangement = Arrangement.Top
     ) {
         Row(
@@ -173,7 +176,9 @@ internal fun MovieInfoSection(
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 error = painterResource(Res.drawable.demo_poster),
-                modifier = Modifier.width(132.dp).height(200.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(250.dp)
             )
             Column(
                 modifier = Modifier
@@ -222,7 +227,7 @@ internal fun MovieInfoSection(
                         modifier = Modifier.height(16.dp)
                     )
                     Text(
-                        text = movieInfo.tmdbRating
+                        text = movieInfo.tmdbRating,
                     )
 
                     Image(
@@ -302,13 +307,17 @@ internal fun FilesInfoSection(
                 ) {
                     Text(
                         text = filesInfo.sizeOnDisk,
+                        style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Medium,
                     )
                     Text(
-                        text = filesInfo.quality, fontWeight = FontWeight.Bold
+                        text = filesInfo.quality,
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold
                     )
                     Text(
                         text = filesInfo.dateAdded,
+                        style = MaterialTheme.typography.labelSmall,
                     )
                 }
             }
@@ -330,23 +339,22 @@ internal fun CreditInfoSection(
     credits: List<CreditResource>,
 ) {
     val screenWidth = getScreenWidth() * 2
-    val itemsInRow = ((screenWidth + 24.dp) / 80.dp).toInt().coerceAtLeast(1)
+    Logger.d(TAG) { screenWidth.toString()  }
+    val itemsInRow = ((screenWidth + 32.dp) / 84.dp).toInt().coerceAtLeast(1)
+    val itemWidth = round((screenWidth / itemsInRow).value)
+    val itemHeight = round(itemWidth * 1.5)
 
     val creditsChunks = credits.chunked(itemsInRow)
-    Logger.d(TAG) { "Items In Row: $itemsInRow" }
-    Logger.d(TAG) { "Row Size: ${creditsChunks.size}" }
-//    Logger.d(TAG) {creditsChunks.toString()  }
     creditsChunks.forEachIndexed { index, creditResourceList ->
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             creditResourceList.forEach { creditResource ->
-//                    Logger.d(TAG) { "Adding  ${creditResource.personName} in Row ${index + 1}" }
                 CreditResourceItem(
-                    imageUrl = creditResource.images.firstOrNull()?.remoteUrl ?: "",
-                    personName = creditResource.personName,
-                    characterName = creditResource.character
+                    creditResource = creditResource,
+                    imageWidth = itemWidth.dp,
+                    imageHeight = itemHeight.dp
                 )
             }
         }
@@ -354,20 +362,24 @@ internal fun CreditInfoSection(
 }
 
 @Composable
-internal fun CreditResourceItem(imageUrl: String, personName: String, characterName: String) {
-    val painter = rememberAsyncImagePainter(model = imageUrl)
+internal fun CreditResourceItem(
+    creditResource: CreditResource,
+    imageWidth: Dp,
+    imageHeight: Dp
+) {
+    val painter = rememberAsyncImagePainter(model = creditResource.images.firstOrNull()?.remoteUrl)
     val painterState by painter.state.collectAsStateWithLifecycle()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .height(150.dp)
-            .padding(horizontal = 2.dp)
-            .width(80.dp)
+            .width(imageWidth)
+            .padding(2.dp)
     ) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
-                .height(100.dp)
+                .height(imageHeight)
+                .width(imageWidth)
                 .clip(RoundedCornerShape(8.dp))
         ) {
             when (painterState) {
@@ -388,15 +400,17 @@ internal fun CreditResourceItem(imageUrl: String, personName: String, characterN
             }
         }
         Text(
-            text = personName,
+            text = creditResource.personName,
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Bold,
             maxLines = 2,
+            minLines = 2,
             textAlign = TextAlign.Center
         )
         Text(
-            text = characterName,
-            style = MaterialTheme.typography.bodySmall,
+            text = if (creditResource.character.isEmpty()) creditResource.job else creditResource.character,
+            style = MaterialTheme.typography.labelSmall,
+            textAlign = TextAlign.Center,
             maxLines = 1
         )
     }

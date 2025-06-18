@@ -26,6 +26,13 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
+            linkerOpts(
+                "-framework", "FirebaseCore",
+                "-framework", "FirebaseInstallations",
+                "-framework", "GoogleAppMeasurement",
+                "-framework", "GoogleUtilities",
+                "-framework", "nanopb"
+            )
         }
     }
     
@@ -50,6 +57,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
 
             implementation(libs.material.icons.extended)
 
@@ -76,6 +84,8 @@ kotlin {
         }
 
         iosMain.dependencies {
+            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
 
             implementation(libs.ktor.client.darwin)
         }

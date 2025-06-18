@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 actual fun getScreenWidth(): Dp = with(LocalDensity.current) {
-    return LocalWindowInfo.current.containerSize.width.dp
+    return LocalWindowInfo.current.containerSize.width.dp / 6
 }
 
 @Composable

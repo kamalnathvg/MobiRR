@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.getDummyMovieById
+import org.koin.core.component.KoinComponent
 
 internal data class MovieDetailsScreenState(
     val movieDetailsForView: MovieDetailsForView? = null,
@@ -14,7 +15,7 @@ internal data class MovieDetailsScreenState(
     val searchResult: List<String>? = null,
 )
 
-internal class MovieDetailsViewModel() : ViewModel() {
+internal class MovieDetailsViewModel : ViewModel(), KoinComponent {
 
     private val _state = MutableStateFlow(MovieDetailsScreenState())
     val state = _state.asStateFlow()

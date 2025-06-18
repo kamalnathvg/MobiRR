@@ -14,7 +14,7 @@ internal data class MovieDetailsForView(
     val imdbId: String,
     val tmdbId: Int,
     val movieInfo: MovieInfo,
-    val filesInfo: List<FileInfo>,
+    val filesInfo: FileInfo? = null,
     val credits: List<CreditResource>
 ){
     data class MovieInfo(
@@ -29,19 +29,19 @@ internal data class MovieDetailsForView(
         val description: String,
     ){
 
-        fun getMovieBackDropOrDefault(): MovieDetailsForView.Image?{
+        fun getMovieBackDropOrDefault(): Image?{
             return this.getImage(CoverType.BACKDROP) ?:
             this.getImage(CoverType.FAN_ART) ?:
             this.getImage(CoverType.POSTER)
         }
 
-        fun getMoviePosterOrDefault(): MovieDetailsForView.Image?{
+        fun getMoviePosterOrDefault(): Image?{
             return this.getImage(CoverType.POSTER) ?:
             this.getImage(CoverType.FAN_ART) ?:
             this.getImage(CoverType.BACKDROP)
         }
 
-        private fun getImage(coverType: CoverType): MovieDetailsForView.Image?{
+        private fun getImage(coverType: CoverType): Image?{
             return this.images.firstOrNull{it.coverType == coverType}
         }
     }
@@ -76,7 +76,7 @@ internal data class MovieDetailsForView(
         val remoteUrl: String
     )
     companion object{
-        fun parseImageFromDto(dtoImage: MovieDto.Image) : MovieDetailsForView.Image {
+        fun parseImageFromDto(dtoImage: MovieDto.Image) : Image {
             return Image(
                 coverType = dtoImage.coverType.toCoverType(),
                 localUrl = dtoImage.url,
@@ -105,19 +105,20 @@ internal fun MovieDto.toMovieDetailsForView(
             tmdbRating = (round(this.ratings.tmdb.value * 10) / 10).toString(),
             imdbRating = (round(this.ratings.imdb.value * 10) / 10).toString(),
             downloadStatus = if (this.hasFile) "Downloaded" else "Not Downloaded",
-            qualityInfo = this.movieFile.quality.quality.name, //TODO: there's a chance this will break due to movie file being multiple files
-            description =  this.overview,
+            qualityInfo = this.qualityProfileId.toString(), //TODO: there's a chance this will break due to movie file being multiple files
+            description = this.overview,
         ),
-        filesInfo = listOf(FileInfo(
-            relativePath = this.movieFile.relativePath,
-            path = this.movieFile.path,
-            sizeOnDisk = this.movieFile.size.toGB(),
-            dateAdded = this.movieFile.dateAdded.toDateTimeString(),
-            languages = listOf(this.movieFile.languages.first().name),
-            quality = this.movieFile.quality.quality.name,
-            resolution = this.movieFile.quality.quality.resolution.toString(),
-        ),
-    ),
+        filesInfo = movieFile?.let {
+            FileInfo(
+                relativePath = movieFile.relativePath,
+                path = movieFile.path,
+                sizeOnDisk = movieFile.size.toGB(),
+                dateAdded = movieFile.dateAdded.toDateTimeString(),
+                languages = listOf(movieFile.languages.first().name),
+                quality = movieFile.quality.quality.name,
+                resolution = movieFile.quality.quality.resolution.toString(),
+            )
+        },
         credits = credits
     )
 }
