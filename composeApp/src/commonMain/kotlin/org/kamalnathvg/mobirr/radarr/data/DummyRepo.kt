@@ -8,12 +8,7 @@ import mobirr.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.StringResource
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.CreditResource
 
-internal sealed interface DummyRepo{
-    data class DynamicString(val value: String): DummyRepo
-    class RawResourceId(
-        val id: StringResource,
-        val args: Array<Any> = arrayOf()
-    ): DummyRepo
+internal class DummyRepo{
 
     private suspend inline fun <reified T> getDataFromJson(file: String): Result<T>{
         return withContext(Dispatchers.IO) {

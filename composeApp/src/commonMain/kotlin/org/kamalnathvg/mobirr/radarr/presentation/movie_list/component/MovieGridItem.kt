@@ -49,7 +49,7 @@ internal fun MovieGridItem(
         onError = Res.drawable.icon_movie,
         modifier = Modifier
             .height(150.dp)
-            .width(80.dp)
+            .width(120.dp)
             .clip(RoundedCornerShape(8.dp))
     )
 }

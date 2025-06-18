@@ -24,7 +24,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Apps
-import androidx.compose.material.icons.filled.SortByAlpha
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material.icons.filled.ViewList
 import androidx.compose.material3.CircularProgressIndicator
@@ -119,18 +118,14 @@ internal fun MovieListScreen(
     }
     Scaffold(
         bottomBar = bottomNavBar
-    ) {
+    ) { paddingValues ->
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(
-                    top = 12.dp,
-                    start = 12.dp,
-                    end = 12.dp
-                    )
-                .statusBarsPadding()
+                .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
+                .padding(paddingValues)
         ) {
             Logger.d(SCREEN_TAG) { "Movies Count: ${state.filteredMovies?.size}" }
             MovieSearchBar(searchQuery = state.searchQuery, onSearchQueryChange = { query ->
@@ -258,7 +253,9 @@ internal fun MovieGridView(
                     CircularProgressIndicator()
                 },
                 onError = Res.drawable.icon_movie,
-                modifier = Modifier.height(200.dp).width(120.dp).clip(RoundedCornerShape(8.dp))
+                modifier = Modifier.height(148.dp)
+                    .width(120.dp)
+                    .clip(RoundedCornerShape(8.dp))
             )
         }
     }

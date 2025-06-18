@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.kamalnathvg.mobirr.radarr.domain.GetMoviesUseCase
 import org.koin.core.component.KoinComponent
 
 
@@ -44,7 +45,9 @@ enum class MovieListScreenView {
     LIST, GRID
 }
 
-internal class MovieListViewModel : ViewModel(), KoinComponent {
+internal class MovieListViewModel(
+    private val getMoviesUseCase: GetMoviesUseCase
+) : ViewModel(), KoinComponent {
     private var cachedMovies: List<Movie>? = null
 
     private val _state = MutableStateFlow(MovieListScreenState())
@@ -60,6 +63,17 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
         Logger.d("Trying to fetch movies", tag = TAG)
 
         cachedMovies = getDummyMovies()
+
+        getMoviesUseCase.invoke().fold(onSuccess = {
+            cachedMovies = it
+        }, onFailure = { error ->
+            _state.update {
+                it.copy(
+                    errorMessage = error.message
+                )
+            }
+        })
+
         _state.update {
             it.copy(
                 filteredMovies = cachedMovies
@@ -82,8 +96,7 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
                 }
                 _state.update {
                     it.copy(
-                        searchQuery = action.query,
-                        filteredMovies = filteredMovies
+                        searchQuery = action.query, filteredMovies = filteredMovies
                     )
                 }
             }
@@ -94,26 +107,22 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
 
             is MovieListAction.OnSortOrderChanged -> {
                 val filteredMovies = state.value.filteredMovies?.handleSortOrderChanged(
-                    sortOrder = action.sortOrder,
-                    sortValue = state.value.currentSortValue
+                    sortOrder = action.sortOrder, sortValue = state.value.currentSortValue
                 ) ?: emptyList<Movie>()
                 _state.update {
                     it.copy(
-                        currentSortOrder = action.sortOrder,
-                        filteredMovies = filteredMovies
+                        currentSortOrder = action.sortOrder, filteredMovies = filteredMovies
                     )
                 }
             }
 
             is MovieListAction.OnSortValueChanged -> {
                 val filteredMovies = state.value.filteredMovies?.handleSortOrderChanged(
-                    sortOrder = state.value.currentSortOrder,
-                    sortValue = action.sortValue
+                    sortOrder = state.value.currentSortOrder, sortValue = action.sortValue
                 ) ?: emptyList<Movie>()
                 _state.update {
                     it.copy(
-                        currentSortValue = action.sortValue,
-                        filteredMovies = filteredMovies
+                        currentSortValue = action.sortValue, filteredMovies = filteredMovies
                     )
                 }
             }
@@ -129,8 +138,7 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
     }
 
     private fun List<Movie>.handleSortOrderChanged(
-        sortOrder: SortOrder,
-        sortValue: SortValue
+        sortOrder: SortOrder, sortValue: SortValue
     ): List<Movie> {
         return when (sortValue) {
             SortValue.ADDED -> {
@@ -144,8 +152,7 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
     }
 
     private fun <T, R : Comparable<R>> List<T>.sortByOrder(
-        sortOrder: SortOrder,
-        selector: (T) -> R?
+        sortOrder: SortOrder, selector: (T) -> R?
     ) = when (sortOrder) {
         SortOrder.ASCENDING -> this.sortedBy(selector)
         SortOrder.DESCENDING -> this.sortedByDescending(selector)
@@ -156,8 +163,7 @@ internal class MovieListViewModel : ViewModel(), KoinComponent {
             val filteredMovies = cachedMovies?.getFilteredMovie(filterType)
             _state.update {
                 it.copy(
-                    filteredMovies = filteredMovies,
-                    currentFilterType = filterType
+                    filteredMovies = filteredMovies, currentFilterType = filterType
                 )
             }
         }

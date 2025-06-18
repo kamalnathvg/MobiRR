@@ -168,12 +168,12 @@ internal fun String.toDateTimeString(): String {
 }
 
 internal suspend fun getDummyMovies(): List<Movie> {
-    val dummyRepo = DummyRepo.DynamicString("")
+    val dummyRepo = DummyRepo()
     return dummyRepo.getMovies().map { it.toMovie() }
 }
 
 internal suspend fun getDummyMovieById(movieId: Int): Result<MovieDetailsForView> {
-    val dummyRepo = DummyRepo.DynamicString("")
+    val dummyRepo = DummyRepo()
     val movies = dummyRepo.getMovies()
     val movie = movies.firstOrNull { it.tmdbId == movieId }
     if (movie == null) {
