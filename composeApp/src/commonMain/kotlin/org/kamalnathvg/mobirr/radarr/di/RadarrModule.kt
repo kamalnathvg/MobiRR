@@ -14,6 +14,6 @@ import org.koin.dsl.module
 val radarrModule = module{
     viewModelOf(::MovieListViewModel)
     viewModelOf(::MovieDetailsViewModel)
-    single<RadarrRepository>{ RadarrRepositoryImpl() }
+    single<RadarrRepository>{ RadarrRepositoryImpl(get()) }
     factory{ GetMoviesUseCase(get()) }
 }

@@ -62,8 +62,6 @@ internal class MovieListViewModel(
     private suspend fun fetchMovies() {
         Logger.d("Trying to fetch movies", tag = TAG)
 
-        cachedMovies = getDummyMovies()
-
         getMoviesUseCase.invoke().fold(onSuccess = {
             cachedMovies = it
         }, onFailure = { error ->
