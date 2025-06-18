@@ -20,7 +20,7 @@ fun NavGraphBuilder.radarrGraph(
         composable<RadarrGraph.MovieList> {
             MovieListRoot(
                 onMovieClick = { movie ->
-                    navController.navigate(RadarrGraph.MovieDetails(movie.tmdbId))
+                    navController.navigate(RadarrGraph.MovieDetails(movie.id))
                 },
                 bottomNavBar = bottomNavBar
             )

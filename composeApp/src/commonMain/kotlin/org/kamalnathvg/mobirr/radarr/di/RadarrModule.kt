@@ -2,6 +2,7 @@ package org.kamalnathvg.mobirr.radarr.di
 
 import org.kamalnathvg.mobirr.radarr.data.RadarrRepository
 import org.kamalnathvg.mobirr.radarr.data.RadarrRepositoryImpl
+import org.kamalnathvg.mobirr.radarr.domain.GetMovieDetailsByIdUseCase
 import org.kamalnathvg.mobirr.radarr.domain.GetMoviesUseCase
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsViewModel
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.MovieListViewModel
@@ -16,4 +17,5 @@ val radarrModule = module{
     viewModelOf(::MovieDetailsViewModel)
     single<RadarrRepository>{ RadarrRepositoryImpl(get()) }
     factory{ GetMoviesUseCase(get()) }
+    factory { GetMovieDetailsByIdUseCase(get()) }
 }

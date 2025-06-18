@@ -14,6 +14,7 @@ import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.accept
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.ContentType
+import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.coroutines.ensureActive
@@ -46,9 +47,10 @@ object HttpClientFactory {
                     }
 
                 }
-                level = LogLevel.ALL
+                level = LogLevel.INFO
             }
             defaultRequest {
+                contentType(ContentType.Application.Json)
                 accept(ContentType.Application.Json)
             }
         }

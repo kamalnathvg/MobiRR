@@ -21,7 +21,7 @@ import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
 internal data class Movie(
-    val id: String,
+    val id: Int,
     val title: String,
     val year: Int,
     val duration: String,
@@ -110,7 +110,7 @@ internal fun String.toGenre(): Genre = Genre.fromString(this)
 
 internal fun MovieDto.toMovie(): Movie {
     return Movie(
-        id = this.id.toString(),
+        id = this.id,
         title = this.title,
         year = this.year,
         studio = this.studio,
