@@ -23,6 +23,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ViewList
 import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material.icons.filled.ViewList
@@ -226,7 +227,7 @@ internal fun SortSection(
             Icon(
 
                 imageVector = if (state.currentView == MovieListScreenView.LIST) Icons.Filled.Apps
-                else Icons.Default.ViewList, contentDescription = null
+                else Icons.AutoMirrored.Default.ViewList, contentDescription = null
             )
         }
     }

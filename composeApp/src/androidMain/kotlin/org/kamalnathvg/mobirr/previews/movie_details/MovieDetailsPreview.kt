@@ -7,7 +7,7 @@ import kotlinx.serialization.json.Json
 import org.kamalnathvg.mobirr.previews.creditResources
 import org.kamalnathvg.mobirr.previews.moviesJson
 import org.kamalnathvg.mobirr.radarr.data.MovieDto
-import org.kamalnathvg.mobirr.radarr.presentation.movie_details.CreditResource
+import org.kamalnathvg.mobirr.radarr.data.CreditResource
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsScreen
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsScreenState
@@ -49,8 +49,8 @@ internal fun MovieDetailsScreenPreview(){
     val movieDetails = getMovieDetailsForView(movieId = 3)
     val state = MovieDetailsScreenState(
         movieDetailsForView = movieDetails,
-        errorMessage = null,
-        searchResult = emptyList(),
+        screenErrorMessage = null,
+        releases = emptyList(),
     )
     MobiRRTheme {
         MovieDetailsScreen(

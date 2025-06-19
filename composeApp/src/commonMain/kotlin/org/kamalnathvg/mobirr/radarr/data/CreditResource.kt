@@ -1,5 +1,4 @@
-package org.kamalnathvg.mobirr.radarr.presentation.movie_details
-
+package org.kamalnathvg.mobirr.radarr.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

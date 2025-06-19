@@ -1,11 +1,12 @@
 package org.kamalnathvg.mobirr.radarr.presentation.movie_details
 
+import org.kamalnathvg.mobirr.radarr.data.CreditResource
 import org.kamalnathvg.mobirr.radarr.data.MovieDto
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView.FileInfo
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.CoverType
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toCoverType
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toDateTimeString
-import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toGB
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toSizeInGB
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toRuntimeString
 import kotlin.math.round
 
@@ -46,6 +47,7 @@ internal data class MovieDetailsForView(
         }
     }
     data class FileInfo(
+        val id: Int,
         val relativePath: String,
         val path: String,
         val sizeOnDisk: String,
@@ -110,9 +112,10 @@ internal fun MovieDto.toMovieDetailsForView(
         ),
         filesInfo = movieFile?.let {
             FileInfo(
+                id = movieFile.id,
                 relativePath = movieFile.relativePath,
                 path = movieFile.path,
-                sizeOnDisk = movieFile.size.toGB(),
+                sizeOnDisk = movieFile.size.toSizeInGB(),
                 dateAdded = movieFile.dateAdded.toDateTimeString(),
                 languages = listOf(movieFile.languages.first().name),
                 quality = movieFile.quality.quality.name,

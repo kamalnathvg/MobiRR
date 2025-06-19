@@ -1,0 +1,1525 @@
+[
+  {
+    "title": "Kung Fu Panda",
+    "originalTitle": "Kung Fu Panda",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸 팬더"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-Фу Панда"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "კუნგ-ფუ პანდა"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Κουνγκ Φου Πάντα 1"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "カンフー・パンダ"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Công Phu Gấu Trúc"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊猫"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "กังฟูแพนด้า จอมยุทธพลิกล็อค ช็อคยุทธภพ"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Քունգ Ֆու Պանդա"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda",
+    "status": "released",
+    "overview": "When the Valley of Peace is threatened, lazy Po the panda discovers his destiny as the \"chosen one\" and trains to become a kung fu hero, but transforming the unsleek slacker into a brave warrior won't be easy. It's up to Master Shifu and the Furious Five -- Tigress, Crane, Mantis, Viper and Monkey -- to give it a try.",
+    "inCinemas": "2008-06-04T00:00:00Z",
+    "physicalRelease": "2008-12-03T00:00:00Z",
+    "digitalRelease": "2008-06-20T00:00:00Z",
+    "releaseDate": "2008-06-04T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/1b3b49c4369869f738ac105ff059a275f1299c126fadb915394e018918df41ab/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/ecc0099d9941406144bfd347d3f2fb18b7140c31d8d3b50b919f8ff5e4fd23b6/364B8ohneoQSgIuYNRYZhjOCcEL.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/364B8ohneoQSgIuYNRYZhjOCcEL.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com/",
+    "remotePoster": "https://image.tmdb.org/t/p/original/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg",
+    "year": 2008,
+    "youTubeTrailerId": "TD0YUZw_oHY",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 90,
+    "cleanTitle": "kungfupanda",
+    "imdbId": "tt0441773",
+    "tmdbId": 9502,
+    "titleSlug": "9502",
+    "folder": "Kung Fu Panda (2008)",
+    "certification": "PG",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Family",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 552258,
+        "value": 7.6,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 11934,
+        "value": 7.3,
+        "type": "user"
+      },
+      "metacritic": {
+        "votes": 0,
+        "value": 74,
+        "type": "user"
+      },
+      "rottenTomatoes": {
+        "votes": 0,
+        "value": 87,
+        "type": "user"
+      }
+    },
+    "collection": {
+      "title": "Kung Fu Panda Collection",
+      "tmdbId": 77816
+    },
+    "popularity": 17.0025
+  },
+  {
+    "title": "Kung Fu Panda 4",
+    "originalTitle": "Kung Fu Panda 4",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊猫4"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "O Panda do Kung Fu 4"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더4"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Κουγκ Φου Πάντα 4"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Công Phu Gấu Trúc 4"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "カンフー・パンダ4"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda 4",
+    "status": "released",
+    "overview": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+    "inCinemas": "2024-03-02T00:00:00Z",
+    "physicalRelease": "2024-05-28T00:00:00Z",
+    "digitalRelease": "2024-04-09T00:00:00Z",
+    "releaseDate": "2024-03-02T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/f4537b09f265c41e7fa122a1f161accd09fb6cd4c18f15fb419d515b0cf81a69/nqXsAaQsKw2gKpkfhIgjXNDRqg7.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/nqXsAaQsKw2gKpkfhIgjXNDRqg7.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/4a52c7b1f928114b7389bb8d697a8d580f92849f540dcc584d85d57519a0d48e/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/kYgQzzjNis5jJalYtIHgrom0gOx.jpg"
+      }
+    ],
+    "website": "https://www.dreamworks.com/movies/kung-fu-panda-4",
+    "remotePoster": "https://image.tmdb.org/t/p/original/nqXsAaQsKw2gKpkfhIgjXNDRqg7.jpg",
+    "year": 2024,
+    "youTubeTrailerId": "d2OONzqh2jk",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 94,
+    "cleanTitle": "kungfupanda4",
+    "imdbId": "tt21692408",
+    "tmdbId": 1011985,
+    "titleSlug": "1011985",
+    "folder": "Kung Fu Panda 4 (2024)",
+    "certification": "PG",
+    "genres": [
+      "Animation",
+      "Family",
+      "Action",
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 70089,
+        "value": 6.3,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 3106,
+        "value": 7.1,
+        "type": "user"
+      },
+      "metacritic": {
+        "votes": 0,
+        "value": 54,
+        "type": "user"
+      },
+      "rottenTomatoes": {
+        "votes": 0,
+        "value": 71,
+        "type": "user"
+      }
+    },
+    "collection": {
+      "title": "Kung Fu Panda Collection",
+      "tmdbId": 77816
+    },
+    "popularity": 36.2676
+  },
+  {
+    "title": "Kung Fu Panda 3",
+    "originalTitle": "Kung Fu Panda 3",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Gong fu xiong mao 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊貓 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊貓3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "კუნგ-ფუ პანდა 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "O Panda do Kung Fu 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸 팬더 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Công Phu Gấu Trúc 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Κουνγκ Φου Πάντα 3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "カンフー・パンダ3"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊猫3"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda 3",
+    "status": "released",
+    "overview": "While Po and his father are visiting a secret panda village, an evil spirit threatens all of China, forcing Po to form a ragtag army to fight back.",
+    "inCinemas": "2016-01-28T00:00:00Z",
+    "physicalRelease": "2016-06-28T00:00:00Z",
+    "digitalRelease": "2016-05-10T00:00:00Z",
+    "releaseDate": "2016-01-28T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/fde25cff70f2337e18a1b37d94c870ce0ed1fcab6d2cdc5666135844c29c07a7/oajNi4Su39WAByHI6EONu8G8HYn.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/oajNi4Su39WAByHI6EONu8G8HYn.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/70f314706c1dbb59f075a6ebb169f1c0369507d960178581a0a81c4beeee881a/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com/",
+    "remotePoster": "https://image.tmdb.org/t/p/original/oajNi4Su39WAByHI6EONu8G8HYn.jpg",
+    "year": 2016,
+    "youTubeTrailerId": "yqN7nHM1YTA",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 95,
+    "cleanTitle": "kungfupanda3",
+    "imdbId": "tt2267968",
+    "tmdbId": 140300,
+    "titleSlug": "140300",
+    "folder": "Kung Fu Panda 3 (2016)",
+    "certification": "PG",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 205719,
+        "value": 7.1,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 6233,
+        "value": 6.915,
+        "type": "user"
+      },
+      "metacritic": {
+        "votes": 0,
+        "value": 66,
+        "type": "user"
+      },
+      "rottenTomatoes": {
+        "votes": 0,
+        "value": 87,
+        "type": "user"
+      }
+    },
+    "collection": {
+      "title": "Kung Fu Panda Collection",
+      "tmdbId": 77816
+    },
+    "popularity": 10.4644
+  },
+  {
+    "title": "Kung Fu Panda 2",
+    "originalTitle": "Kung Fu Panda 2",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda 2 3D"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸 팬더 2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸 팬더2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "კუნგ-ფუ პანდა 2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Κουνγκ Φου Πάντα 2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda 2 - Doppelt bärenstark"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "カンフー・パンダ2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Công Phu Gấu Trúc 2"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊猫2"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda 2",
+    "status": "released",
+    "overview": "Po and his friends fight to stop a peacock villain from conquering China with a deadly new weapon, but first the Dragon Warrior must come to terms with his past.",
+    "inCinemas": "2011-05-25T00:00:00Z",
+    "physicalRelease": "2011-10-19T00:00:00Z",
+    "digitalRelease": "2011-05-27T00:00:00Z",
+    "releaseDate": "2011-05-25T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/6d67539c1d10f3797e6641a409a107c215cbc3d391f2921f9f435dccb82612b6/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/e695835e90ecade38d30a6cbb2292d11c7a33648dddcede5b16faf679a9a5b2e/7BdxZXbSkUiVeCRXKD3hi9KYeWm.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/7BdxZXbSkUiVeCRXKD3hi9KYeWm.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com/",
+    "remotePoster": "https://image.tmdb.org/t/p/original/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg",
+    "year": 2011,
+    "youTubeTrailerId": "FQ63rqSRrEI",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 91,
+    "cleanTitle": "kungfupanda2",
+    "imdbId": "tt1302011",
+    "tmdbId": 49444,
+    "titleSlug": "49444",
+    "folder": "Kung Fu Panda 2 (2011)",
+    "certification": "PG",
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 339733,
+        "value": 7.3,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 7402,
+        "value": 7.041,
+        "type": "user"
+      },
+      "metacritic": {
+        "votes": 0,
+        "value": 67,
+        "type": "user"
+      },
+      "rottenTomatoes": {
+        "votes": 0,
+        "value": 82,
+        "type": "user"
+      }
+    },
+    "collection": {
+      "title": "Kung Fu Panda Collection",
+      "tmdbId": 77816
+    },
+    "popularity": 12.4474
+  },
+  {
+    "title": "Kung Fu Panda: Legends of Awesomeness 1 : The Scorpion Sting",
+    "originalTitle": "Kung Fu Panda: Legends of Awesomeness 1 : The Scorpion Sting",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: L'incroyable légende - La menace de Scorpion"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - L'Incroyable Légende - La Menace de Scorpion (2011)"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda legends awesomeness 1 scorpion sting",
+    "status": "released",
+    "overview": "",
+    "physicalRelease": "2013-10-15T00:00:00Z",
+    "releaseDate": "2013-10-15T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/8881eca631e1b7d6daa86c16e2bdb2c866dad2585f06b42dd63b5a310432fda7/7ghEy5r7JhQLFUtA8AG7C2KEbrD.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/7ghEy5r7JhQLFUtA8AG7C2KEbrD.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/d0920263313ad70ec6065468c85bbd11eff1cb061acad6541bac7142eb55fbbe/dlODKohSlDR5mKzaPCYZ83Flx2r.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/dlODKohSlDR5mKzaPCYZ83Flx2r.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/7ghEy5r7JhQLFUtA8AG7C2KEbrD.jpg",
+    "year": 2013,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 154,
+    "cleanTitle": "kungfupandalegendsawesomeness1scorpionsting",
+    "tmdbId": 325854,
+    "titleSlug": "325854",
+    "folder": "Kung Fu Panda Legends of Awesomeness 1 The Scorpion Sting (2013)",
+    "certification": "G",
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Action"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "tmdb": {
+        "votes": 7,
+        "value": 7.3,
+        "type": "user"
+      }
+    },
+    "popularity": 0.7601
+  },
+  {
+    "title": "Kung Fu Panda: Legends of Awesomeness - Good Croc, Bad Croc",
+    "originalTitle": "Kung Fu Panda: Legends of Awesomeness - Good Croc, Bad Croc",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - L'Incroyable Légende - Un sacré coco de croco"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda legends awesomeness good croc bad croc",
+    "status": "released",
+    "overview": "Po gets suckered by Fung to break into a castle.",
+    "physicalRelease": "2013-06-18T00:00:00Z",
+    "releaseDate": "2013-06-18T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/639da8255b73ff19e7aaef4f8c4d283b29109e1a848474e5d382c38b7e537e37/rY27wAZ2EHW8BYr0cEbgGQjctBY.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/rY27wAZ2EHW8BYr0cEbgGQjctBY.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/d715d7e2a8b642612ab702cc289cfd09562b7df3f8e2876b5a212206a60a90fc/fkFrxE8yaJ3Kv5wMwlVOQyaLsfw.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/fkFrxE8yaJ3Kv5wMwlVOQyaLsfw.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/rY27wAZ2EHW8BYr0cEbgGQjctBY.jpg",
+    "year": 2013,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 154,
+    "cleanTitle": "kungfupandalegendsawesomenessgoodcrocbadcroc",
+    "tmdbId": 381547,
+    "titleSlug": "381547",
+    "folder": "Kung Fu Panda Legends of Awesomeness - Good Croc, Bad Croc (2013)",
+    "genres": [
+      "Family",
+      "Animation",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "tmdb": {
+        "votes": 13,
+        "value": 6.3,
+        "type": "user"
+      }
+    },
+    "popularity": 1.7477
+  },
+  {
+    "title": "Kung Fu Panda Holiday",
+    "originalTitle": "Kung Fu Panda Holiday",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda Po's: Winter Wonderland"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "La festività di Kung Fu Panda"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda Especial Vacaciones"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-Фу Панда - Праздник"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸 팬더: 홀리데이 스페셜"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda : Festin d'hiver"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Especial de Natal"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-фу Панда: Свято"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더 - 홀리데이 스페셜"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더 홀리데이 스페셜"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda Holiday Special"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: Holiday Special"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Holiday Special"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Công Phu Gấu Trúc: Ngày Lễ Đặc Biệt"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊貓：特別節目"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "La fiesta de Kung Fu Panda"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda holiday",
+    "status": "released",
+    "overview": "The Winter Feast is Po's favorite holiday. Every year he and his father hang decorations, cook together, and serve noodle soup to the villagers. But this year Shifu informs Po that as Dragon Warrior, it is his duty to host the formal Winter Feast at the Jade Palace. Po is caught between his obligations as the Dragon Warrior and his family traditions: between Shifu and Mr. Ping.",
+    "inCinemas": "2010-11-26T00:00:00Z",
+    "physicalRelease": "2012-11-08T00:00:00Z",
+    "digitalRelease": "2010-11-26T00:00:00Z",
+    "releaseDate": "2010-11-26T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/63b4115ffbef580cea8706741d04f8fa55aacf4b2adaeced0a1751fb1a29b7b3/vJv3pI8pyS13rLjy0ok7a3BiE0a.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/vJv3pI8pyS13rLjy0ok7a3BiE0a.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/e1040d6cbdef5291d7eacac7e63e547adec4712e878e164f35ed620a83d79048/5qEbMgADycx8uk3Lyb6ybgozniN.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/5qEbMgADycx8uk3Lyb6ybgozniN.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com",
+    "remotePoster": "https://image.tmdb.org/t/p/original/vJv3pI8pyS13rLjy0ok7a3BiE0a.jpg",
+    "year": 2010,
+    "youTubeTrailerId": "S2JQJVdV8HQ",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 21,
+    "cleanTitle": "kungfupandaholiday",
+    "imdbId": "tt1702433",
+    "tmdbId": 50393,
+    "titleSlug": "50393",
+    "folder": "Kung Fu Panda Holiday (2010)",
+    "certification": "G",
+    "genres": [
+      "Animation",
+      "Family",
+      "TV Movie",
+      "Comedy",
+      "Fantasy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 7274,
+        "value": 6.7,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 354,
+        "value": 7,
+        "type": "user"
+      }
+    },
+    "popularity": 2.166
+  },
+  {
+    "title": "Kung Fu Panda: Secrets of the Masters",
+    "originalTitle": "Kung Fu Panda: Secrets of the Masters",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda Die Geheimnisse der Meister"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "쿵푸팬더: 마스터의 비밀"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-Фу Панда: Секрети майстрів"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Die Geheimnisse der Meister (2011)"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda secrets masters",
+    "status": "released",
+    "overview": "Po and the Furious Five uncover the legend of three of kung fu's greatest heroes: Master Thundering Rhino, Master Storming Ox, and Master Croc.",
+    "inCinemas": "2011-12-12T00:00:00Z",
+    "digitalRelease": "2011-12-13T00:00:00Z",
+    "releaseDate": "2011-12-12T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/1c194715964346a4a9760cc29d918caa05a58a3aae4465e9fd2a799dd3a5f188/xON7QZ6yHYt1S1Aji0wfGQ1a7ml.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/xON7QZ6yHYt1S1Aji0wfGQ1a7ml.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/e879104cc11c0796996e1e0fc4cdfd8c4939b4176d1f19da04ba9b432ea969f3/puN8XJHaxj7gkxrd7OsYVptR1QB.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/puN8XJHaxj7gkxrd7OsYVptR1QB.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com",
+    "remotePoster": "https://image.tmdb.org/t/p/original/xON7QZ6yHYt1S1Aji0wfGQ1a7ml.jpg",
+    "year": 2011,
+    "youTubeTrailerId": "AXBKz66L25Y",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 24,
+    "cleanTitle": "kungfupandasecretsmasters",
+    "imdbId": "tt1980162",
+    "tmdbId": 81003,
+    "titleSlug": "81003",
+    "folder": "Kung Fu Panda Secrets of the Masters (2011)",
+    "certification": "NR",
+    "genres": [
+      "Animation",
+      "Action",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 4846,
+        "value": 6.8,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 263,
+        "value": 6.4,
+        "type": "user"
+      }
+    },
+    "popularity": 2.813
+  },
+  {
+    "title": "Kung Fu Panda:  The Awesome Secrets Collection",
+    "originalTitle": "Kung Fu Panda:  The Awesome Secrets Collection",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda awesome secrets collection",
+    "status": "released",
+    "overview": "Collection containing \"Secrets Of The Scroll\",  \"Secrets Of The Masters\", and \"Secrets Of The Furious Five\".",
+    "digitalRelease": "2013-08-27T00:00:00Z",
+    "releaseDate": "2013-08-27T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/d4c3d3e61d3b726921fb698be536111d1d348cf2414db0676ccbee59f4460b56/cCoscBHWxefxGDUewzHH5CCyVfc.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/cCoscBHWxefxGDUewzHH5CCyVfc.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/cCoscBHWxefxGDUewzHH5CCyVfc.jpg",
+    "year": 2013,
+    "youTubeTrailerId": "",
+    "studio": "",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 74,
+    "cleanTitle": "kungfupandaawesomesecretscollection",
+    "imdbId": "tt6963796",
+    "tmdbId": 786624,
+    "titleSlug": "786624",
+    "folder": "Kung Fu Panda The Awesome Secrets Collection (2013)",
+    "genres": [
+      "Family"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 220,
+        "value": 6.7,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 3,
+        "value": 8,
+        "type": "user"
+      }
+    },
+    "popularity": 1.3286
+  },
+  {
+    "title": "Kung Fu Panda | Legends of Awesomeness: The Midnight Stranger Vol.4",
+    "originalTitle": "Kung Fu Panda | Legends of Awesomeness: The Midnight Stranger Vol.4",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda legends awesomeness midnight stranger vol 4",
+    "status": "released",
+    "overview": "",
+    "inCinemas": "2014-06-01T00:00:00Z",
+    "releaseDate": "2014-06-01T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/d5938a9294124339fff429ce8ee77b1bc6314f9aa61332a213cb3911cd8bfcbc/3RzNHWFRi9cirAWkt07vHFf1F8o.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/3RzNHWFRi9cirAWkt07vHFf1F8o.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/3RzNHWFRi9cirAWkt07vHFf1F8o.jpg",
+    "year": 2014,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "cleanTitle": "kungfupandalegendsawesomenessmidnightstrangervol4",
+    "tmdbId": 283332,
+    "titleSlug": "283332",
+    "folder": "Kung Fu Panda Legends of Awesomeness The Midnight Stranger Vol.4 (2014)",
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "tmdb": {
+        "votes": 8,
+        "value": 5.4,
+        "type": "user"
+      }
+    },
+    "popularity": 0.6106
+  },
+  {
+    "title": "Kung Fu Panda: Secrets of the Scroll",
+    "originalTitle": "Kung Fu Panda: Secrets of the Scroll",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-Фу Панда: Загадки свитка"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: Tajemnice zwoju"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: Segredos do Pergaminho"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-Фу Панда: Загадки сувою"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda secrets scroll",
+    "status": "released",
+    "overview": "As Po looks for his lost action figures, the story of how the panda inadvertently helped create the Furious Five is told.",
+    "inCinemas": "2016-01-05T00:00:00Z",
+    "physicalRelease": "2016-01-05T00:00:00Z",
+    "digitalRelease": "2015-12-15T00:00:00Z",
+    "releaseDate": "2015-12-15T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/967a5d4adb256a46d73863a0a656f49b263ed3b795ce33b5d794e72174bf27db/9LsQpFS3JOLmVfIV38oI9YHMpi.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/9LsQpFS3JOLmVfIV38oI9YHMpi.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/26c2a241c8cdbbf56a8505e9bb0cd650eef54c209727e155d24886d2928a4665/b8EMiuQFM8zGb0l7GTXii5cl3Cr.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/b8EMiuQFM8zGb0l7GTXii5cl3Cr.jpg"
+      }
+    ],
+    "website": "http://www.kungfupanda.com",
+    "remotePoster": "https://image.tmdb.org/t/p/original/9LsQpFS3JOLmVfIV38oI9YHMpi.jpg",
+    "year": 2016,
+    "youTubeTrailerId": "aJ2UYchHC_I",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 23,
+    "cleanTitle": "kungfupandasecretsscroll",
+    "imdbId": "tt5513770",
+    "tmdbId": 381693,
+    "titleSlug": "381693",
+    "folder": "Kung Fu Panda Secrets of the Scroll (2016)",
+    "certification": "G",
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 3201,
+        "value": 6.9,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 222,
+        "value": 6.8,
+        "type": "user"
+      }
+    },
+    "popularity": 2.2014
+  },
+  {
+    "title": "Kung Fu Panda: Secrets of the Furious Five",
+    "originalTitle": "Kung Fu Panda: Secrets of the Furious Five",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - I segreti dei cinque cicloni"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "功夫熊猫之盖世五侠的秘密"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Nouvelles Aventures de Po (Les) - Les Secrets des Cinq Cyclones"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Les Secrets des Cinq Cyclones"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - De fantastiske fems hemmeligheder"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-фу Панда Секреты неистовой пятерки"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Das Geheimnis der furiosen Fünf"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda Les Secrets Des Cinq Cyclones"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda - Secrets of the Furious Five"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: Sekrety Potężnej Piątki"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Кунг-фу Панда. Секрети шаленої п'ятірки"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda secrets furious five",
+    "status": "released",
+    "overview": "Ordered to teach a martial arts class of rambunctious bunny kittens, Po tells stories of each of the Furious Five's pasts.",
+    "inCinemas": "2008-11-08T00:00:00Z",
+    "releaseDate": "2008-11-08T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/957b901eec76e24fc6dafc314d1e8050de5c7112b7a5ea0f79a2d9613f229cd4/3HENPRM1tGRswyjgiIbP9b4sult.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/3HENPRM1tGRswyjgiIbP9b4sult.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/f43f032587e7b894baf5e5eeef2473d528185d061b40913cee8786fbca1e082f/iezp56ettTUsHWgBjkqvEps5oxc.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/iezp56ettTUsHWgBjkqvEps5oxc.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/3HENPRM1tGRswyjgiIbP9b4sult.jpg",
+    "year": 2008,
+    "youTubeTrailerId": "0l9VXZRAEuI",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 25,
+    "cleanTitle": "kungfupandasecretsfuriousfive",
+    "imdbId": "tt1287845",
+    "tmdbId": 15854,
+    "titleSlug": "15854",
+    "folder": "Kung Fu Panda Secrets of the Furious Five (2008)",
+    "certification": "PG",
+    "genres": [
+      "Animation",
+      "Family",
+      "Action"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 9838,
+        "value": 7,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 433,
+        "value": 6.7,
+        "type": "user"
+      }
+    },
+    "popularity": 2.0476
+  },
+  {
+    "title": "Kung Fu Panda: Unstoppable Awesomeness",
+    "originalTitle": "Kung Fu Panda: Unstoppable Awesomeness",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda unstoppable awesomeness",
+    "status": "released",
+    "overview": "When it gets dire, it’s all up to the Furious Five and Dragon Warrior Po whome we admire! Now you’re part of Master Po’s mission to rescue the Kung Fu’s legendary legends! Join them in an adventure like no other when you pay us a visit and try for yourself the awesomeness that our state-of-the-art 4D simulator brings! Come now!",
+    "inCinemas": "2016-12-16T00:00:00Z",
+    "releaseDate": "2016-12-16T00:00:00Z",
+    "images": [],
+    "website": "",
+    "year": 2016,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 4,
+    "cleanTitle": "kungfupandaunstoppableawesomeness",
+    "imdbId": "tt8628966",
+    "tmdbId": 829339,
+    "titleSlug": "829339",
+    "folder": "Kung Fu Panda Unstoppable Awesomeness (2016)",
+    "genres": [
+      "Animation"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 18,
+        "value": 4.4,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 2,
+        "value": 6.5,
+        "type": "user"
+      }
+    },
+    "popularity": 0.1434
+  },
+  {
+    "title": "Kung Fu Panda: Panda Paws",
+    "originalTitle": "Kung Fu Panda: Panda Paws",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Kung Fu Panda: Panda Paws"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda panda paws",
+    "status": "released",
+    "overview": "A short film which serves as a prequel to Kung Fu Panda 3 in which Mei Mei and Bao compete with one another at the Spring Festival.",
+    "physicalRelease": "2016-05-13T00:00:00Z",
+    "releaseDate": "2016-05-13T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/e59844d85cebfe0d5b62ebcfb4df27551b24ea6bd0fbf5b7d884c5e98eacb4c5/zl0IUY5rCuL8fkjWL0j50GROzkP.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/zl0IUY5rCuL8fkjWL0j50GROzkP.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/e1d6833ee63aacc172d884cfa6c12568b6c5b76e2e26f56fd017e5f63d822052/4X5dInMrA4kR92DRgMw43T6Efvx.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/4X5dInMrA4kR92DRgMw43T6Efvx.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/zl0IUY5rCuL8fkjWL0j50GROzkP.jpg",
+    "year": 2016,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 3,
+    "cleanTitle": "kungfupandapandapaws",
+    "imdbId": "tt5981706",
+    "tmdbId": 456661,
+    "titleSlug": "456661",
+    "folder": "Kung Fu Panda Panda Paws (2016)",
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 136,
+        "value": 5.1,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 14,
+        "value": 5.9,
+        "type": "user"
+      }
+    },
+    "popularity": 1.1729
+  },
+  {
+    "title": "Kung Fu Panda 5",
+    "originalTitle": "Kung Fu Panda 5",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "kung fu panda 5",
+    "status": "announced",
+    "overview": "",
+    "images": [],
+    "website": "",
+    "year": 0,
+    "youTubeTrailerId": "",
+    "studio": "DreamWorks Animation",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "cleanTitle": "kungfupanda5",
+    "tmdbId": 1298205,
+    "titleSlug": "1298205",
+    "folder": "Kung Fu Panda 5 ()",
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "tmdb": {
+        "votes": 0,
+        "value": 0,
+        "type": "user"
+      }
+    },
+    "popularity": 0.2112
+  },
+  {
+    "title": "Dreamworks Holiday Classics",
+    "originalTitle": "Dreamworks Holiday Classics",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Dreamworks Holiday Classics (Merry Madagascar + Shrek the Halls + Gift of the Night Fury)"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "DreamWorks Holiday Classics"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "dreamworks holiday classics",
+    "status": "released",
+    "overview": "Join your favourite DreamWorks friends for these four holiday specials. Watch as those zany zoosters from Madagascar save Christmas, Donkey puts on a carolling Christmas Shrek-tacular, and Po prepares for his favourite holiday, the Winter Feast.",
+    "physicalRelease": "2012-10-30T00:00:00Z",
+    "releaseDate": "2012-10-30T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/c6d9990f83551ed80633a77fab73f1e2f901bd680878bc90e0d82841ed61e40e/mNB0AMOxTcg9celLOnltZMxxrqi.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/mNB0AMOxTcg9celLOnltZMxxrqi.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/f05da1d0e0717a26a2179075200bef954cfb6f69042986de168708b8b4ae0309/xWZqP9Q0dOYnRMpj6qNcnfOC9hu.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/xWZqP9Q0dOYnRMpj6qNcnfOC9hu.jpg"
+      }
+    ],
+    "website": "",
+    "remotePoster": "https://image.tmdb.org/t/p/original/mNB0AMOxTcg9celLOnltZMxxrqi.jpg",
+    "year": 2012,
+    "youTubeTrailerId": "ByUMbvThI8o",
+    "studio": "DreamWorks Home Entertainment",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 85,
+    "cleanTitle": "dreamworksholidayclassics",
+    "imdbId": "tt6979738",
+    "tmdbId": 286488,
+    "titleSlug": "286488",
+    "folder": "Dreamworks Holiday Classics (2012)",
+    "certification": "G",
+    "genres": [
+      "Family",
+      "Animation",
+      "Comedy"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 175,
+        "value": 6.2,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 98,
+        "value": 7.7,
+        "type": "user"
+      }
+    },
+    "popularity": 0.891
+  },
+  {
+    "title": "The Prodigy",
+    "originalTitle": "The Prodigy",
+    "originalLanguage": {
+      "id": 1,
+      "name": "English"
+    },
+    "alternateTitles": [
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Way of the Panda"
+      },
+      {
+        "sourceType": "tmdb",
+        "movieMetadataId": 0,
+        "title": "Panda: Sihirli Yol"
+      }
+    ],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "prodigy",
+    "status": "released",
+    "overview": "Is Prevalent's latest wonderfully creative animatedfeature film. It highlights the story of a lovely yet humble young girl in Ancient China who is an exceptional champion. Her name is \"KG\" - the \"Kung-Fu Girl\" with a big heart. Although she is an underdog, and the odds are against her; she discovers that there is no limit to what she can accomplish when she believes in herself.",
+    "inCinemas": "2009-07-07T00:00:00Z",
+    "physicalRelease": "2010-01-22T00:00:00Z",
+    "releaseDate": "2009-07-07T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "/MediaCoverProxy/f50b16423cb1919d34cbbceaf97489930157bb0585857cf81087d22796c03e3c/d7Xi7MXWiKBAdhG94RmlBufrs2k.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/d7Xi7MXWiKBAdhG94RmlBufrs2k.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCoverProxy/2e04a9315ec1a06561f8468174f8b44e67b754efa4f61cd19617debba277ac64/1XCO4yhpei0ar1PU8ZQZNlTt4v4.jpg",
+        "remoteUrl": "https://image.tmdb.org/t/p/original/1XCO4yhpei0ar1PU8ZQZNlTt4v4.jpg"
+      }
+    ],
+    "website": "http://kungfuprodigy.com/",
+    "remotePoster": "https://image.tmdb.org/t/p/original/d7Xi7MXWiKBAdhG94RmlBufrs2k.jpg",
+    "year": 2009,
+    "youTubeTrailerId": "34PEAK-kE1g",
+    "studio": "",
+    "qualityProfileId": 0,
+    "movieFileId": 0,
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 77,
+    "cleanTitle": "theprodigy",
+    "imdbId": "tt1485096",
+    "tmdbId": 24661,
+    "titleSlug": "24661",
+    "folder": "The Prodigy (2009)",
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Family"
+    ],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "imdb": {
+        "votes": 369,
+        "value": 1.8,
+        "type": "user"
+      },
+      "tmdb": {
+        "votes": 6,
+        "value": 1.7,
+        "type": "user"
+      }
+    },
+    "popularity": 0.3025
+  }
+]

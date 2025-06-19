@@ -6,8 +6,7 @@ import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.http.appendPathSegments
-import org.kamalnathvg.mobirr.radarr.presentation.movie_details.CreditResource
-import org.kamalnathvg.mobirr.radarr.presentation.movie_details.ReleaseDto
+import org.kamalnathvg.mobirr.radarr.data.CreditResource
 import org.kamalnathvg.mobirr.safeCall
 
 internal class RadarrRepositoryImpl(
@@ -57,21 +56,15 @@ internal class RadarrRepositoryImpl(
     override suspend fun addMovie(movieId: Int): Result<Unit> {
         return safeCall {
             httpClient.post {
-                url{
-                    apiParam()
+                apiParam()
                     //TODO: add required params
-                }
             }
         }
     }
 
-    override suspend fun removeFile(fileId: Int): Result<Unit> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun removeMovieFile(fileId: Int): Result<Unit> = Result.success(Unit)
 
-    override suspend fun removeMovie(movieId: Int): Result<Unit> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun removeMovie(movieId: Int): Result<Unit> = Result.success(Unit)
 
     override suspend fun getReleases(movieId: Int): Result<List<ReleaseDto>> {
         return safeCall {
@@ -84,13 +77,12 @@ internal class RadarrRepositoryImpl(
 
     override suspend fun addRelease(releaseDto: ReleaseDto): Result<Unit> {
         return safeCall {
-            httpClient.post {
+            httpClient.post(RELEASE_URL) {
                 apiParam()
                 setBody(releaseDto)
             }
         }
     }
-
 
     companion object {
         private const val BASE_URL = "http://100.113.11.77:7878"

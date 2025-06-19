@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import mobirr.composeapp.generated.resources.Res
 import mobirr.composeapp.generated.resources.icon_movie
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.Movie
-import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toGB
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.toSizeInGB
 import org.kamalnathvg.mobirr.utils.LoadImageFromUrl
 
 @Composable
@@ -90,7 +90,7 @@ internal fun MovieListItem(
                     )
                     Row {
                         Text(
-                            text = movie.sizeOnDisk.toGB(),
+                            text = movie.sizeOnDisk.toSizeInGB(),
                             style = MaterialTheme.typography.labelMedium
                         )
                     }

@@ -11,7 +11,7 @@ import kotlinx.datetime.format.DateTimeComponents
 import kotlinx.datetime.format.MonthNames
 import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
-import org.kamalnathvg.mobirr.radarr.data.DummyRepo
+import org.kamalnathvg.mobirr.radarr.data.DummyRadarrRepository
 import org.kamalnathvg.mobirr.radarr.data.MovieDto
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsForView
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.toMovieDetailsForView
@@ -144,7 +144,7 @@ internal fun Long.toRuntimeString(): String {
     }
 }
 
-internal fun Long.toGB(): String {
+internal fun Long.toSizeInGB(): String {
     return "${round(this * 10 / (1024.0.pow(3))) / 10} GB"
 }
 
@@ -168,17 +168,17 @@ internal fun String.toDateTimeString(): String {
 }
 
 internal suspend fun getDummyMovies(): List<Movie> {
-    val dummyRepo = DummyRepo()
-    return dummyRepo.getMovies().map { it.toMovie() }
+    val dummyRadarrRepository = DummyRadarrRepository()
+    return dummyRadarrRepository.getAllMovies().getOrElse { emptyList() }.map { it.toMovie() }
 }
 
 internal suspend fun getDummyMovieById(movieId: Int): Result<MovieDetailsForView> {
-    val dummyRepo = DummyRepo()
-    val movies = dummyRepo.getMovies()
+    val dummyRadarrRepository = DummyRadarrRepository()
+    val movies = dummyRadarrRepository.getAllMovies().getOrElse { emptyList() }
     val movie = movies.firstOrNull { it.tmdbId == movieId }
     if (movie == null) {
         return Result.failure(Exception("Movie Not Found"))
     }
-    val credits = dummyRepo.getDummyMetadata()
+    val credits = dummyRadarrRepository.getCreditResources(2).getOrElse { emptyList() }
     return Result.success(movie.toMovieDetailsForView(credits))
 }
