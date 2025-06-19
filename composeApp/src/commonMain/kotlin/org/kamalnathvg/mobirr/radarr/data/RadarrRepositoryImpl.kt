@@ -119,15 +119,23 @@ internal class RadarrRepositoryImpl(
     }
 
     companion object {
+
+        private const val DEMO_API_KEY = "1260b1d7a9a242e385cf03984c07c10d"
+
         private const val BASE_URL = "http://100.113.11.77:7878"
         private const val API_VERSION = "/api/v3"
-        private const val ALL_MOVIES_URL = "$BASE_URL$API_VERSION/movie"
-        private const val MOVIE_BY_ID_URL = "$BASE_URL$API_VERSION/movie"
-        private const val CREDIT_RESOURCE_URL = "$BASE_URL$API_VERSION/credit"
-        private const val MOVIE_LOOKUP_URL = "$BASE_URL$API_VERSION/movie/lookup"
-        private const val RELEASE_URL = "$BASE_URL$API_VERSION/release"
-        private const val DEMO_API_KEY = "1260b1d7a9a242e385cf03984c07c10d"
-        private const val DELETE_MOVIE_FILE_URL = "$BASE_URL$API_VERSION/moviefile"
+        private const val RADARR_URL = "$BASE_URL$API_VERSION"
+
+        private const val ALL_MOVIES_URL = "$RADARR_URL/movie"
+        private const val MOVIE_BY_ID_URL = "$RADARR_URL/movie"
+
+        private const val DELETE_MOVIE_FILE_URL = "$RADARR_URL/moviefile"
+
+        private const val MOVIE_LOOKUP_URL = "$RADARR_URL/movie/lookup"
+
+        private const val CREDIT_RESOURCE_URL = "$RADARR_URL/credit"
+
+        private const val RELEASE_URL = "$RADARR_URL/release"
 
         private fun HttpRequestBuilder.apiParam() {
             return this.url.parameters.append("apikey", DEMO_API_KEY)
