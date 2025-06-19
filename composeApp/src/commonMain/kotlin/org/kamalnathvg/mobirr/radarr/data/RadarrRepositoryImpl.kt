@@ -2,6 +2,7 @@ package org.kamalnathvg.mobirr.radarr.data
 
 import io.ktor.client.HttpClient
 import io.ktor.client.request.HttpRequestBuilder
+import io.ktor.client.request.delete
 import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
@@ -62,7 +63,16 @@ internal class RadarrRepositoryImpl(
         }
     }
 
-    override suspend fun removeMovieFile(fileId: Int): Result<Unit> = Result.success(Unit)
+    override suspend fun removeMovieFile(fileId: Int): Result<Unit> {
+        return safeCall {
+            httpClient.delete(DELETE_MOVIE_FILE_URL) {
+                url{
+                    appendPathSegments(fileId.toString())
+                }
+                apiParam()
+            }
+        }
+    }
 
     override suspend fun removeMovie(movieId: Int): Result<Unit> = Result.success(Unit)
 
@@ -93,6 +103,7 @@ internal class RadarrRepositoryImpl(
         private const val MOVIE_LOOKUP_URL = "$BASE_URL$API_VERSION/movie/lookup"
         private const val RELEASE_URL = "$BASE_URL$API_VERSION/release"
         private const val DEMO_API_KEY = "1260b1d7a9a242e385cf03984c07c10d"
+        private const val DELETE_MOVIE_FILE_URL = "$BASE_URL$API_VERSION/moviefile"
 
         private fun HttpRequestBuilder.apiParam() {
             return this.url.parameters.append("apikey", DEMO_API_KEY)
