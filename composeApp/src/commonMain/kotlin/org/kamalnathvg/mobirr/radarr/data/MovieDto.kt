@@ -95,7 +95,7 @@ internal data class MovieDto(
         @SerialName("movieMetadataId")
         val movieMetadataId: Int,
         @SerialName("id")
-        val id: Int
+        val id: Int ? = null
     )
 
     @Serializable

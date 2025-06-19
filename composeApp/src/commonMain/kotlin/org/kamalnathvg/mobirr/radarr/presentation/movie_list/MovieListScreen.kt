@@ -8,25 +8,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridState
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ViewList
 import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.SwapVert
-import androidx.compose.material.icons.filled.ViewList
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -44,7 +34,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -52,10 +41,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import co.touchlab.kermit.Logger
 import kotlinx.coroutines.launch
-import mobirr.composeapp.generated.resources.Res
-import mobirr.composeapp.generated.resources.icon_movie
-import org.kamalnathvg.mobirr.radarr.presentation.movie_list.component.MovieListItem
-import org.kamalnathvg.mobirr.utils.LoadImageFromUrl
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.component.FilterLabelSection
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.component.MovieGridView
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.component.MovieListView
 import org.koin.compose.viewmodel.koinViewModel
 
 private const val ROOT_TAG = "MovieListRoot"
@@ -129,13 +117,16 @@ internal fun MovieListScreen(
                 .padding(paddingValues)
         ) {
             Logger.d(SCREEN_TAG) { "Movies Count: ${state.filteredMovies?.size}" }
-            MovieSearchBar(searchQuery = state.searchQuery, onSearchQueryChange = { query ->
-                onAction(MovieListAction.OnSearchQueryChange(query))
-            }, onImeSearch = {
-                clearFocusAndHideKeyboard()
-            }, onFocusChanged = {
-                clearFocusAndHideKeyboard()
-            })
+            MovieSearchBar(
+                searchQuery = state.searchQuery,
+                onSearchQueryChange = { query ->
+                    onAction(MovieListAction.OnSearchQueryChange(query))
+                }, onImeSearch = {
+                    clearFocusAndHideKeyboard()
+                }, onFocusChanged = {
+                    clearFocusAndHideKeyboard()
+                }
+            )
             FilterLabelSection(
                 onFilterChanged = {
                     onAction(MovieListAction.OnFilterChange(it))
@@ -228,56 +219,6 @@ internal fun SortSection(
 
                 imageVector = if (state.currentView == MovieListScreenView.LIST) Icons.Filled.Apps
                 else Icons.AutoMirrored.Default.ViewList, contentDescription = null
-            )
-        }
-    }
-}
-
-@Composable
-internal fun MovieGridView(
-    lazyGridState: LazyGridState, movies: List<Movie>, onAction: (MovieListAction) -> Unit
-) {
-    LazyVerticalGrid(
-        state = lazyGridState,
-        columns = GridCells.Adaptive(minSize = 80.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        horizontalArrangement = Arrangement.spacedBy(6.dp),
-    ) {
-        items(
-            items = movies, key = { it.id }) { movie ->
-            LoadImageFromUrl(
-                url = movie.getMoviePosterOrDefault()?.remoteUrl.toString(),
-                onClick = {
-                    onAction(MovieListAction.OnMovieClick(movie))
-                },
-                onLoading = {
-                    CircularProgressIndicator()
-                },
-                onError = Res.drawable.icon_movie,
-                modifier = Modifier.height(148.dp)
-                    .width(120.dp)
-                    .clip(RoundedCornerShape(8.dp))
-            )
-        }
-    }
-}
-
-
-@Composable
-internal fun MovieListView(
-    lazyListState: LazyListState, movies: List<Movie>, onAction: (MovieListAction) -> Unit
-) {
-
-    LazyColumn(
-        state = lazyListState,
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        items(
-            items = movies, key = { it.id }) { movie ->
-            MovieListItem(
-                movie = movie, onMovieClick = {
-                    onAction(MovieListAction.OnMovieClick(movie))
-                }, modifier = Modifier
             )
         }
     }

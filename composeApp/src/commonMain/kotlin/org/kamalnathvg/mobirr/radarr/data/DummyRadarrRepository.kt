@@ -23,7 +23,7 @@ internal class DummyRadarrRepository : RadarrRepository {
         getDataFromJson<List<CreditResource>>(file = DUMMY_CREDITS_FILE)
 
     override suspend fun lookupMovie(searchTerm: String): Result<List<MovieDto>> =
-        Result.success(emptyList())
+        getDataFromJson<List<MovieDto>>(file = DUMMY_LOOKUP_FILE)
 
     override suspend fun addMovie(movieId: Int): Result<Unit> = Result.success(Unit)
 

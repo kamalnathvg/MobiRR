@@ -16,19 +16,26 @@ import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import co.touchlab.kermit.Logger
+
+private const val TAG = "MovieSearchBar"
 
 @Composable
 internal fun MovieSearchBar(
     searchQuery: String,
     onSearchQueryChange: (String) -> Unit,
-    onImeSearch: () -> Unit,
-    onFocusChanged: () -> Unit
+    onImeSearch: (String) -> Unit,
+    onFocusChanged: () -> Unit,
+    focusRequester: FocusRequester? = null
 ) {
+    Logger.d(TAG) {searchQuery}
     OutlinedTextField(
         value = searchQuery,
         shape = RoundedCornerShape(100.dp),
@@ -48,7 +55,9 @@ internal fun MovieSearchBar(
         },
         trailingIcon = {
             IconButton(
-                onClick = onImeSearch,
+                onClick = {
+                    onImeSearch(searchQuery)
+                },
             ) {
                 Icon(
                     Icons.Default.Search, contentDescription = null
@@ -56,7 +65,7 @@ internal fun MovieSearchBar(
             }
         },
         keyboardActions = KeyboardActions(onSearch = {
-            onImeSearch()
+            onImeSearch(searchQuery)
         }),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Text,
@@ -76,6 +85,10 @@ internal fun MovieSearchBar(
                 if (!focusState.isFocused){
                     onFocusChanged()
                 }
+            }.let { modifier ->
+                focusRequester?.let {
+                    modifier.focusRequester(it)
+                } ?: modifier
             }
 
     )

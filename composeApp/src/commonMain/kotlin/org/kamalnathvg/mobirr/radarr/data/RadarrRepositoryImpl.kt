@@ -7,69 +7,83 @@ import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.http.appendPathSegments
-import org.kamalnathvg.mobirr.radarr.data.CreditResource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.withContext
 import org.kamalnathvg.mobirr.safeCall
 
 internal class RadarrRepositoryImpl(
     private val httpClient: HttpClient
 ) : RadarrRepository {
     override suspend fun getAllMovies(): Result<List<MovieDto>> {
-        return safeCall {
-            httpClient.get(ALL_MOVIES_URL) {
-                apiParam()
+        return makeNetworkCall {
+            safeCall {
+                httpClient.get(ALL_MOVIES_URL) {
+                    apiParam()
+                }
             }
         }
     }
 
     override suspend fun getMovieById(movieId: Int): Result<MovieDto> {
-        return safeCall {
-            httpClient.get(MOVIE_BY_ID_URL) {
-                url {
-                    appendPathSegments(movieId.toString())
-                    apiParam()
+        return makeNetworkCall {
+            safeCall {
+                httpClient.get(MOVIE_BY_ID_URL) {
+                    url {
+                        appendPathSegments(movieId.toString())
+                        apiParam()
+                    }
                 }
             }
         }
     }
 
     override suspend fun getCreditResources(movieId: Int): Result<List<CreditResource>> {
-        return safeCall {
-            httpClient.get(CREDIT_RESOURCE_URL) {
-                url {
-                    apiParam()
-                    movieIdParam(movieId)
+        return makeNetworkCall {
+            safeCall {
+                httpClient.get(CREDIT_RESOURCE_URL) {
+                    url {
+                        apiParam()
+                        movieIdParam(movieId)
+                    }
                 }
             }
         }
     }
 
     override suspend fun lookupMovie(searchTerm: String): Result<List<MovieDto>> {
-        return safeCall {
-            httpClient.get(MOVIE_LOOKUP_URL) {
-                url {
-                    apiParam()
-                    movieLookupParam(searchTerm)
+        return makeNetworkCall {
+            safeCall {
+                httpClient.get(MOVIE_LOOKUP_URL) {
+                    url {
+                        apiParam()
+                        movieLookupParam(searchTerm)
+                    }
                 }
             }
         }
     }
 
     override suspend fun addMovie(movieId: Int): Result<Unit> {
-        return safeCall {
-            httpClient.post {
-                apiParam()
+        return makeNetworkCall {
+            safeCall {
+                httpClient.post {
+                    apiParam()
                     //TODO: add required params
+                }
             }
         }
     }
 
     override suspend fun removeMovieFile(fileId: Int): Result<Unit> {
-        return safeCall {
-            httpClient.delete(DELETE_MOVIE_FILE_URL) {
-                url{
-                    appendPathSegments(fileId.toString())
+        return makeNetworkCall {
+            safeCall {
+                httpClient.delete(DELETE_MOVIE_FILE_URL) {
+                    url {
+                        appendPathSegments(fileId.toString())
+                    }
+                    apiParam()
                 }
-                apiParam()
             }
         }
     }
@@ -77,20 +91,30 @@ internal class RadarrRepositoryImpl(
     override suspend fun removeMovie(movieId: Int): Result<Unit> = Result.success(Unit)
 
     override suspend fun getReleases(movieId: Int): Result<List<ReleaseDto>> {
-        return safeCall {
-            httpClient.get(RELEASE_URL) {
-                apiParam()
-                movieIdParam(movieId)
+        return makeNetworkCall {
+            safeCall {
+                httpClient.get(RELEASE_URL) {
+                    apiParam()
+                    movieIdParam(movieId)
+                }
             }
         }
     }
 
     override suspend fun addRelease(releaseDto: ReleaseDto): Result<Unit> {
-        return safeCall {
-            httpClient.post(RELEASE_URL) {
-                apiParam()
-                setBody(releaseDto)
+        return makeNetworkCall {
+            safeCall {
+                httpClient.post(RELEASE_URL) {
+                    apiParam()
+                    setBody(releaseDto)
+                }
             }
+        }
+    }
+
+    private suspend fun <T> makeNetworkCall(networkCall: suspend () -> Result<T>): Result<T> {
+        return withContext(Dispatchers.IO) {
+            networkCall()
         }
     }
 
@@ -109,11 +133,11 @@ internal class RadarrRepositoryImpl(
             return this.url.parameters.append("apikey", DEMO_API_KEY)
         }
 
-        private fun HttpRequestBuilder.movieIdParam(movieId: Int){
+        private fun HttpRequestBuilder.movieIdParam(movieId: Int) {
             return this.url.parameters.append("movieId", movieId.toString())
         }
 
-        private fun HttpRequestBuilder.movieLookupParam(searchTerm: String){
+        private fun HttpRequestBuilder.movieLookupParam(searchTerm: String) {
             return this.url.parameters.append("term", searchTerm)
         }
     }

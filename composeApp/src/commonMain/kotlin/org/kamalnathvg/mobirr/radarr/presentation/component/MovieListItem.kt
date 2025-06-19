@@ -1,4 +1,4 @@
-package org.kamalnathvg.mobirr.radarr.presentation.movie_list.component
+package org.kamalnathvg.mobirr.radarr.presentation.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -42,6 +43,7 @@ internal fun MovieListItem(
     ) {
         Row(
             modifier = Modifier
+                .fillMaxSize()
         ) {
             LoadImageFromUrl(
                 url = movie.getMoviePosterOrDefault()?.remoteUrl.toString(),
@@ -75,6 +77,7 @@ internal fun MovieListItem(
                 ) {
                     Text(
                         text = movie.title,
+                        maxLines = 2,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                     )
@@ -88,11 +91,13 @@ internal fun MovieListItem(
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Medium
                     )
-                    Row {
-                        Text(
-                            text = movie.sizeOnDisk.toSizeInGB(),
-                            style = MaterialTheme.typography.labelMedium
-                        )
+                    if (movie.sizeOnDisk != 0L){
+                        Row {
+                            Text(
+                                text = movie.sizeOnDisk.toSizeInGB(),
+                                style = MaterialTheme.typography.labelMedium
+                            )
+                        }
                     }
                 }
             }

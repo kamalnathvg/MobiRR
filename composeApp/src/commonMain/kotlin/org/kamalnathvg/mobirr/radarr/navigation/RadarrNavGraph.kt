@@ -7,10 +7,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
+import org.kamalnathvg.mobirr.radarr.presentation.movie_add.MovieAddRoot
 import org.kamalnathvg.mobirr.radarr.presentation.movie_details.MovieDetailsRoot
 import org.kamalnathvg.mobirr.radarr.presentation.movie_list.MovieListRoot
 
-fun NavGraphBuilder.radarrGraph(
+internal fun NavGraphBuilder.radarrGraph(
     navController: NavHostController,
     bottomNavBar: @Composable () -> Unit,
 ){
@@ -35,6 +36,28 @@ fun NavGraphBuilder.radarrGraph(
     }
 }
 
+internal fun NavGraphBuilder.movieAddGraph(
+    navController: NavHostController,
+    bottomNavBar: @Composable () -> Unit
+    ){
+    navigation<MovieAddGraph>(
+        startDestination = MovieAddGraph.MovieAdd,
+    ) {
+
+        composable<MovieAddGraph.MovieAdd> { backStackEntry ->
+            MovieAddRoot(
+                bottomNavBar = bottomNavBar
+            )
+        }
+    }
+}
+
+@Serializable
+internal object MovieAddGraph{
+    @Serializable
+    data object MovieAdd
+}
+
 @Serializable
 internal object RadarrGraph {
     @Serializable
@@ -42,4 +65,5 @@ internal object RadarrGraph {
 
     @Serializable
     data class MovieDetails(val movieId: Int)
+
 }

@@ -1,4 +1,4 @@
-package org.kamalnathvg.mobirr.radarr.presentation.movie_list
+package org.kamalnathvg.mobirr.radarr.presentation.movie_list.component
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import co.touchlab.kermit.Logger
+import org.kamalnathvg.mobirr.radarr.presentation.movie_list.FilterType
 
 private const val TAG = "FilterLabelSection"
 

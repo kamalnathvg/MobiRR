@@ -1,6 +1,8 @@
 package org.kamalnathvg.mobirr.app.navigation
 
+import org.kamalnathvg.mobirr.radarr.navigation.RadarrGraph
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Movie
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
@@ -17,7 +19,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import org.kamalnathvg.mobirr.radarr.navigation.RadarrGraph
+import org.kamalnathvg.mobirr.radarr.navigation.MovieAddGraph
 
 internal data class NavigationItem<T : Any>(
     val name: String,
@@ -33,9 +35,9 @@ internal val navigationItems = listOf(
         route = RadarrGraph.MovieList
     ),
     NavigationItem(
-        name = "Settings",
-        icon = Icons.Default.Settings,
-        route = RadarrGraph.MovieList
+        name = "Add Movie",
+        icon = Icons.Default.Add,
+        route = MovieAddGraph.MovieAdd
     )
 )
 

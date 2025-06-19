@@ -74,7 +74,7 @@ sealed class NetworkError : Exception() {
 
 
 suspend inline fun <reified T> safeCall(
-    execute: () -> HttpResponse
+    execute: suspend () -> HttpResponse
 ): Result<T> {
     val response = try {
         execute()
