@@ -67,7 +67,7 @@ internal fun MovieListItem(
                 )
 
                 Column(
-                    verticalArrangement = Arrangement.SpaceEvenly,
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
                     modifier = Modifier
                         .padding(
                             horizontal = 12.dp,

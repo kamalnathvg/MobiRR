@@ -1,4 +1,4 @@
-package org.kamalnathvg.mobirr.previews.movie_ad
+package org.kamalnathvg.mobirr.previews.movie_add
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
